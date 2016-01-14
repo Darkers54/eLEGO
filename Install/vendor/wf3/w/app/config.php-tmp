@@ -1,0 +1,22 @@
+<?php
+
+$w_config = [
+	//information de connexion à la bdd
+	'db_host'         => 'localhost', //hôte (ip, domaine) de la bdd
+	'db_user'         => 'ego', //nom d'utilisateur pour la bdd
+	'db_pass'         => 'azerty123', //mot de passe de la bdd
+	'db_name'         => 'ego', //nom de la bdd
+	'db_table_prefix' => '', //préfixe ajouté aux noms de table
+
+	//authentification, autorisation
+	'security_user_table'        => 'tbusers', //nom de la table contenant les infos des utilisateurs
+	'security_id_property'       => 'ID_usr', //nom de la colonne pour la clef primaire
+	'security_username_property' => 'usrNickname', //nom de la colonne pour le "pseudo"
+	'security_email_property'    => 'usrEmail', //nom de la colonne pour l'"email"
+	'security_password_property' => 'usrPassword', //nom de la colonne pour le "mot de passe"
+	'security_role_property'     => 'usrRole', //nom de la colonne pour le "role"
+
+	'security_login_route_name' => 'login', //nom de la route affichant le formulaire de connexion
+];
+
+require ('routes.php');
