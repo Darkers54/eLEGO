@@ -80,7 +80,7 @@ if (!function_exists('icraft_top_cart')) {
 /* Adding login logout menu item */
 /*-----------------------------------------------------------------------------------*/
  
-add_filter( 'wp_nav_menu_items', 'icraft_add_loginout_link', 10, 2 );
+add_filter( '', 'icraft_add_loginout_link', 10, 2 );
 function icraft_add_loginout_link( $items, $args ) {
 		
 	//$hide_login = of_get_option('hide_login');
