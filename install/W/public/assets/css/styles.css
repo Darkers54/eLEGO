@@ -1,0 +1,23 @@
+@font-face
+{
+	font-family:'Legothick';
+	src: url('<?= $this->assetUrl('Fonts/Legothick.ttf'); ?>');
+}
+
+body
+{
+	padding-top: 70px;
+	background-color: #FFF;
+	color:#000;
+}
+
+footer>p
+{
+	text-align: center;
+}
+
+.legofont
+{
+	font-family: 'Legothick';
+	text-transform: uppercase;
+}
