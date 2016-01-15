@@ -46,8 +46,11 @@
 			</nav>
 			<h1>W :: <?= $this->e($title) ?></h1>
 		</header>
-
+		<div class="logo">
+			<img src="<?= $this->assetUrl('img/truc.jpg'); ?>" alt="imagelego">
+		</div>
 		<section>
+
 			<?= $this->section('main_content') ?>
 		</section>
 

@@ -9,6 +9,7 @@ body
 	padding-top: 70px;
 	background-color: #FFF;
 	color:#000;
+
 }
 
 footer>p
@@ -20,4 +21,10 @@ footer>p
 {
 	font-family: 'Legothick';
 	text-transform: uppercase;
+}
+
+.logo
+{
+	width:200px;
+	height: 400px;
 }
