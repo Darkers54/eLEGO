@@ -15,4 +15,25 @@ class DefaultController extends Controller
 		$this->show('default/home');
 	}
 
+	public function presentation()
+	{
+		$this->show('default/presentation');
+	}
+
+	public function contact()
+	{
+		$this->show('default/contact');
+	}
+
+	public function mentions()
+	{
+		$this->show('default/mentions');
+	}
+
+	public function help()
+	{
+		$this->show('default/help');
+	}
+
+
 }
