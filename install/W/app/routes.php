@@ -3,7 +3,7 @@
 	$w_routes = array(
 		['GET', '/', 'Default#home', 'home'],
 
-		['GET', '/test', 'tbproducts#test', 'test_test'],
+		['GET', '/construire', 'tbproducts#afficheLego', 'construire_construire'],
 
 		['GET', '/presentation', 'Default#presentation', 'default_presentation'],
 		['GET', '/contact', 'Default#contact', 'default_contact'],
