@@ -12,6 +12,7 @@ $normal_search = get_theme_mod('normal_search', of_get_option('normal_search'));
 	</label>
     <?php if($normal_search == 0) { ?>
     <?php echo '<input type="hidden" value="product" name="post_type" id="post_type" />'; ?>
+    
     <?php } ?>
 	
     <input type="submit" class="search-submit" value="<?php echo __( 'Search', 'i-craft' ) ?>" />

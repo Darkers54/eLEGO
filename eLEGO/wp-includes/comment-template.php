@@ -1605,7 +1605,8 @@ function get_comment_reply_link( $args = array(), $comment = null, $post = null 
 	$args = apply_filters( 'comment_reply_link_args', $args, $comment, $post );
 
 	if ( get_option( 'comment_registration' ) && ! is_user_logged_in() ) {
-		$link = sprintf( '<a rel="nofollow" class="comment-reply-login" href="%s">%s</a>',
+		/** lien vers le login du site et non le login wordpress **/
+		$link = sprintf( '<a rel="nofollow" class="comment-reply-login" href="localhost/eLEGO/mon-compte">Vous devez être connecté(e) pour pouvoir commenter.</a>',
 			esc_url( wp_login_url( get_permalink() ) ),
 			$args['login_text']
 		);
@@ -2138,7 +2139,8 @@ function comment_form( $args = array(), $post_id = null ) {
 		'fields'               => $fields,
 		'comment_field'        => '<p class="comment-form-comment"><label for="comment">' . _x( 'Comment', 'noun' ) . '</label> <textarea id="comment" name="comment" cols="45" rows="8"  aria-required="true" required="required"></textarea></p>',
 		/** This filter is documented in wp-includes/link-template.php */
-		'must_log_in'          => '<p class="must-log-in">' . sprintf( __( 'You must be <a href="%s">logged in</a> to post a comment.' ), wp_login_url( apply_filters( 'the_permalink', get_permalink( $post_id ) ) ) ) . '</p>',
+		/** modifications du lien pour pointer sur le login du site eLEGO et non pas le login wordpress par defaut **/
+		'must_log_in'          => '<p class="must-log-in">' . sprintf( __( 'Vous devez être <a href="http://localhost/eLEGO/mon-compte">connecté(e)</a> pour pouvoir commenter.' ), wp_login_url( apply_filters( 'the_permalink', get_permalink( $post_id ) ) ) ) . '</p>',
 		/** This filter is documented in wp-includes/link-template.php */
 		'logged_in_as'         => '<p class="logged-in-as">' . sprintf( __( '<a href="%1$s" aria-label="Logged in as %2$s. Edit your profile.">Logged in as %2$s</a>. <a href="%3$s">Log out?</a>' ), get_edit_user_link(), $user_identity, wp_logout_url( apply_filters( 'the_permalink', get_permalink( $post_id ) ) ) ) . '</p>',
 		'comment_notes_before' => '<p class="comment-notes"><span id="email-notes">' . __( 'Your email address will not be published.' ) . '</span>'. ( $req ? $required_text : '' ) . '</p>',

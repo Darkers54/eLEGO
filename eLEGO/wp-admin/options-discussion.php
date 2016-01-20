@@ -238,6 +238,8 @@ $avatar_defaults = array(
  *
  * @param array $avatar_defaults Array of default avatars.
  */
+
+
 $avatar_defaults = apply_filters( 'avatar_defaults', $avatar_defaults );
 $default = get_option( 'avatar_default', 'mystery' );
 $size = 32;

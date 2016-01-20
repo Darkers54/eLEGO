@@ -294,6 +294,16 @@
 	</IfModule>
 # END iThemes Security - Do not modify or remove this line
 
+# BEGIN s2Member GZIP exclusions
+<IfModule rewrite_module>
+	RewriteEngine On
+	RewriteBase /eLEGO/
+	RewriteCond %{QUERY_STRING} (^|\?|&)s2member_file_download\=.+ [OR]
+	RewriteCond %{QUERY_STRING} (^|\?|&)no-gzip\=1
+	RewriteRule .* - [E=no-gzip:1]
+</IfModule>
+# END s2Member GZIP exclusions
+
 # BEGIN WordPress
 <IfModule mod_rewrite.c>
 RewriteEngine On

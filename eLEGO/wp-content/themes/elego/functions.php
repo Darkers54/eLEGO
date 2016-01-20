@@ -12,6 +12,18 @@ function theme_enqueue_styles() {
     );
 }
 
+// Logout Redirect
+
+function sebb_logout_redirect()
+{
+wp_redirect(home_url());
+exit;
+}
+
+add_action('wp_logout', 'sebb_logout_redirect');
+
+
+
 
 
 //
