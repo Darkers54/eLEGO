@@ -10,9 +10,12 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
 	<!-- Our Own StyleSheet ;) -->
 	<link rel="stylesheet" href="<?= $this->assetUrl('css/styles.css') ?>">
+	<!-- Ajax javascript-->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 	<!-- Latest compiled and minified JavaScript -->
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
-	
+	<!-- Our Own Scripts ;) -->
+	<script src="<?= $this->assetUrl('js/construire.js') ?>" type="text/javascript" charset="utf-8" defer></script>
 	
 </head>
 <body>
