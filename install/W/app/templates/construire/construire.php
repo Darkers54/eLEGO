@@ -21,7 +21,7 @@
 			?>	
 			<div class="liste">
 				<figure>
-			  			<img class="thumb hidden-xs" src="<?= $this->assetUrl('/img/products/'.$currentAccHead['pdctName'].'/'.$currentAccHead['prodUrl'])?>" alt="<?= $currentAccHead['prodDesc']?>">
+			  			<img class="thumb hidden-xs" id="<?= $currentAccHead['ID_prod']; ?>" src="<?= $this->assetUrl('/img/products/'.$currentAccHead['pdctName'].'/'.$currentAccHead['prodUrl'])?>" alt="<?= $currentAccHead['prodDesc']?>">
 				</figure>
 			</div>	
 			<?php endforeach; ?>
@@ -39,8 +39,8 @@
 				foreach ($z2acchead as $currentAccHead) :
 					$id .= $currentAccHead['ID_prod'];
 			?>
-				<figure class="ac_head liste">
-					<img src="<?= $this->assetUrl('/img/products/'.$currentAccHead['pdctName'].'/'.$currentAccHead['prodUrl'])?>" alt="<?= $currentAccHead['prodDesc']?>">
+				<figure class="ac_head liste" id="z2acchead">
+					<img id="<?= $id; ?>" src="<?= $this->assetUrl('/img/products/'.$currentAccHead['pdctName'].'/'.$currentAccHead['prodUrl'])?>" alt="<?= $currentAccHead['prodDesc']?>">
 				</figure>
 			<?php endforeach; ?>
 
@@ -83,12 +83,11 @@
 
 			<!--Liste des images-->
 			<?php
-				$id ='';
 				foreach ($z1head as $currentHead) :
 			?>	
 			<div class="liste">
 				<figure>
-			  			<img class="thumb hidden-xs" src="<?= $this->assetUrl('/img/products/'.$currentHead['pdctName'].'/'.$currentHead['prodUrl'])?>" alt="<?= $currentHead['prodDesc']?>">
+			  			<img class="thumb hidden-xs" id="<?= $currentHead['ID_prod']; ?>" src="<?= $this->assetUrl('/img/products/'.$currentHead['pdctName'].'/'.$currentHead['prodUrl'])?>" alt="<?= $currentHead['prodDesc']?>">
 				</figure>
 			</div>	
 			<?php endforeach; ?>
@@ -107,7 +106,7 @@
 					$id .= $currentHead['ID_prod'];
 			?>
 				<figure class="ac_head liste">
-					<img src="<?= $this->assetUrl('/img/products/'.$currentHead['pdctName'].'/'.$currentHead['prodUrl'])?>" alt="<?= $currentHead['prodDesc']?>">
+					<img id="<?= $currentHead['ID_prod']; ?>" src="<?= $this->assetUrl('/img/products/'.$currentHead['pdctName'].'/'.$currentHead['prodUrl'])?>" alt="<?= $currentHead['prodDesc']?>">
 				</figure>
 			<?php endforeach; ?>
 
@@ -155,7 +154,7 @@
 			?>	
 			<div class="liste">
 				<figure>
-			  			<img class="thumb hidden-xs" src="<?= $this->assetUrl('/img/products/'.$currentAccChest['pdctName'].'/'.$currentAccChest['prodUrl'])?>" alt="<?= $currentAccChest['prodDesc']?>">
+			  			<img class="thumb hidden-xs" id="<?= $currentAccChest['ID_prod']; ?>" src="<?= $this->assetUrl('/img/products/'.$currentAccChest['pdctName'].'/'.$currentAccChest['prodUrl'])?>" alt="<?= $currentAccChest['prodDesc']?>">
 				</figure>
 			</div>	
 			<?php endforeach; ?>
@@ -174,7 +173,7 @@
 					$id .= $currentAccChest['ID_prod'];
 			?>
 				<figure class="ac_chest liste">
-					<img src="<?= $this->assetUrl('/img/products/'.$currentAccChest['pdctName'].'/'.$currentAccChest['prodUrl'])?>" alt="<?= $currentAccChest['prodDesc']?>">
+					<img id="<?= $currentAccChest['ID_prod']; ?>" src="<?= $this->assetUrl('/img/products/'.$currentAccChest['pdctName'].'/'.$currentAccChest['prodUrl'])?>" alt="<?= $currentAccChest['prodDesc']?>">
 				</figure>
 			<?php endforeach; ?>
 
@@ -222,7 +221,7 @@
 			?>	
 			<div class="liste">
 				<figure>
-			  			<img class="thumb hidden-xs" src="<?= $this->assetUrl('/img/products/'.$currentChest['pdctName'].'/'.$currentChest['prodUrl'])?>" alt="<?= $currentChest['prodDesc']?>">
+			  			<img class="thumb hidden-xs" id="<?= $currentChest['ID_prod']; ?>" src="<?= $this->assetUrl('/img/products/'.$currentChest['pdctName'].'/'.$currentChest['prodUrl'])?>" alt="<?= $currentChest['prodDesc']?>">
 				</figure>
 			</div>	
 			<?php endforeach; ?>
@@ -241,7 +240,7 @@
 					$id .= $currentChest['ID_prod'];
 			?>
 				<figure class="ac_head liste">
-					<img src="<?= $this->assetUrl('/img/products/'.$currentChest['pdctName'].'/'.$currentChest['prodUrl'])?>" alt="<?= $currentChest['prodDesc']?>">
+					<img id="<?= $currentChest['ID_prod']; ?>" src="<?= $this->assetUrl('/img/products/'.$currentChest['pdctName'].'/'.$currentChest['prodUrl'])?>" alt="<?= $currentChest['prodDesc']?>">
 				</figure>
 			<?php endforeach; ?>
 
@@ -289,7 +288,7 @@
 			?>	
 			<div class="liste">
 				<figure>
-			  			<img class="thumb hidden-xs" src="<?= $this->assetUrl('/img/products/'.$currentAccLegs['pdctName'].'/'.$currentAccLegs['prodUrl'])?>" alt="<?= $currentAccLegs['prodDesc']?>">
+			  			<img class="thumb hidden-xs" id="<?= $currentAccLegs['ID_prod']; ?>" src="<?= $this->assetUrl('/img/products/'.$currentAccLegs['pdctName'].'/'.$currentAccLegs['prodUrl'])?>" alt="<?= $currentAccLegs['prodDesc']?>">
 				</figure>
 			</div>	
 			<?php endforeach; ?>
@@ -308,7 +307,7 @@
 					$id .= $currentAccLegs['ID_prod'];
 			?>
 				<figure class="ac_head liste">
-					<img src="<?= $this->assetUrl('/img/products/'.$currentAccLegs['pdctName'].'/'.$currentAccLegs['prodUrl'])?>" alt="<?= $currentAccLegs['prodDesc']?>">
+					<img id="<?= $currentAccLegs['ID_prod']; ?>" src="<?= $this->assetUrl('/img/products/'.$currentAccLegs['pdctName'].'/'.$currentAccLegs['prodUrl'])?>" alt="<?= $currentAccLegs['prodDesc']?>">
 				</figure>
 			<?php endforeach; ?>
 
@@ -356,7 +355,7 @@
 			?>	
 			<div class="liste">
 				<figure>
-			  			<img class="thumb hidden-xs" src="<?= $this->assetUrl('/img/products/'.$currentLegs['pdctName'].'/'.$currentLegs['prodUrl'])?>" alt="<?= $currentLegs['prodDesc']?>">
+			  			<img class="thumb hidden-xs" id="<?= $currentLegs['ID_prod']; ?>" src="<?= $this->assetUrl('/img/products/'.$currentLegs['pdctName'].'/'.$currentLegs['prodUrl'])?>" alt="<?= $currentLegs['prodDesc']?>">
 				</figure>
 			</div>	
 			<?php endforeach; ?>
@@ -375,7 +374,7 @@
 					$id .= $currentLegs['ID_prod'];
 			?>
 				<figure class="ac_head liste">
-					<img src="<?= $this->assetUrl('/img/products/'.$currentLegs['pdctName'].'/'.$currentLegs['prodUrl'])?>" alt="<?= $currentLegs['prodDesc']?>">
+					<img id="<?= $currentLegs['ID_prod']; ?>" src="<?= $this->assetUrl('/img/products/'.$currentLegs['pdctName'].'/'.$currentLegs['prodUrl'])?>" alt="<?= $currentLegs['prodDesc']?>">
 				</figure>
 			<?php endforeach; ?>
 
@@ -409,5 +408,8 @@
 		<?php endforeach; ?>
 		<div class="clearfix"></div>
 	</div>	
+	<div>
+		<button type="button">Valider la configuration</button>
+	</div>
 
 <?php $this->stop('main_content') ?>

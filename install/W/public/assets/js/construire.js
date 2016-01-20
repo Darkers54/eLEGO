@@ -1,5 +1,8 @@
 
 $(function(){
+
+
+	var images_stockees= [];
 /*
 	Quand je clique sur une image elle s'affiche 
 */
@@ -18,8 +21,56 @@ $(function(){
 		Quand je clique sur la div previous :
 	*/
 	$('#prevAccHead').on('click', function(){
+		//Je récupére
 
-		alert('test previous');
+		var id_image = $('#z2acchead>img').attr('id');
+		console.log(id_image);
+
+		$.ajax('/construire'), {
+			data: id_image,
+			method: "GET",
+			success: function(result, status, xhr){
+				console.info("success", result);
+			},
+			error: function(xhr, status, error){
+				console.error("error", xhr, status);
+			},
+			complete: function(xhr, status){
+				console.log("complete", xhr);
+			}
+		}
+
+		$.ajax({
+			url: '/path/to/file',
+			type: 'default GET (Other values: POST)',
+			dataType: 'default: Intelligent Guess (Other values: xml, json, script, or html)',
+			data: {param1: 'value1'},
+		})
+		.done(function(data) {
+			console.log("success");
+			var myData = JSON.parse(data);
+			console.log(myData)
+		})
+		.fail(function() {
+			console.log("error");
+		})
+		.always(function() {
+			console.log("complete");
+		});
+		
+
+
+
+		//Je stocke id dans array
+		//images_stockees.push(new_id_image);
+		//alert('test previous');
+
+		//Je parcours le tableau
+		//for(i=0;i<images_stockees.length;i--){
+			// Je décrémente l'id 
+			
+	 		//$("").append();
+	 	//}
 
 	});
 
@@ -105,6 +156,6 @@ $(function(){
 	/*
 		Suppression de l'image sélectionnée
 	*/
-	// $('button.retirer').remove();
+	// $('.retirer').remove();
 	//Là tu viens de retirer le bouton de l'interface, patate !!!
 });

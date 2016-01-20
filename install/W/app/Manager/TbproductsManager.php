@@ -14,7 +14,7 @@
 			$sth->bindValue(':limit', $limit, \PDO::PARAM_INT);
 			$sth->execute();
 
-			return $sth->fetchAll();
+			echo json_encode($sth->fetchAll());
 		}
 
 		
