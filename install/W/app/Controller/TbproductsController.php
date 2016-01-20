@@ -47,6 +47,15 @@
 				'z2acclegs'=> $z2acclegs,
 				'z1legs'=>$z1legs,
 				'z2legs'=>$z2legs
-												   ]);
+			]);	
+		}
+
+		public function idLego($id)
+		{
+			$request=$_REQUEST;
+			$idimg = $request['id_image'];
+			$tbproductsManager = new \Manager\TbproductsManager();
+			$mesInfos = $tbproductsManager->find($idimg);
+			return $mesInfos;
 		}
 	}
