@@ -1,0 +1,147 @@
+@font-face
+{
+	font-family:'Legothick';
+	src: url('<?= $this->assetUrl('Fonts/Legothick.ttf'); ?>');
+}
+
+body
+{
+	padding-top: 70px;
+	background-color: #FFF;
+	color:#000;
+
+}
+
+footer>p
+{
+	text-align: center;
+}
+
+.legofont
+{
+	font-family: 'Legothick';
+	text-transform: uppercase;
+}
+
+.logo
+{
+	width:200px;
+	height: 400px;
+}
+.liste
+{
+	float : left;
+	border: 1px solid gray;
+}
+
+.liste h2
+{
+	text-align: center;
+}
+.liste figure .thumb
+{
+	width: 96px;
+	height : 96px;
+	margin : 5px;
+	border: 1px solid gray;
+}
+
+.liste .ac_head
+{
+
+	border: 1px solid gray;
+}
+
+.ac_head, .ac_chest
+{
+	margin-top: 10px;
+}
+
+.ac_head img, .ac_chest img
+{
+	width:	175px;
+	height: 175px;
+}
+
+#prevAccHead, #nextAccHead, #prevHead, #nextHead, #prevAccChest, #nextAccChest, #prevChest, #nextChest, #prevAccLegs, #nextAccLegs, #prevLegs, #nextLegs
+{
+	width: 30px;
+	height: 30px;
+	margin:90px 2px;
+	border: 1px solid gray;
+}
+
+#prevAccHead img, #nextAccHead img, #prevHead img, #nextHead img, #prevAccChest img, #nextAccChest img, #prevChest img, #nextChest img, #prevAccLegs img, #nextAccLegs img, #prevLegs img, #nextLegs img
+{
+	width: 24px;
+	height:24px;
+	margin: 2px;
+}
+
+.retirer
+{
+	float: right;
+}
+
+.ajouter
+{
+	float: left;
+}
+
+.zone3
+{
+
+}
+
+.zone3 ul
+{
+	padding: 0;	
+	border: 1px solid gray;
+}
+
+.zone3 li
+{
+	list-style-type: none;
+	padding: 0;
+}
+
+.zone4 p
+{
+	font-size: small;
+}
+
+.acchead
+{
+	background-color: #FFF552;
+}
+
+.heads
+{
+	background-color: #65F6B0;
+}
+
+.accchest
+{
+	background-color: #61E6FA;
+}
+
+.chests
+{
+	background-color: #F661EA;
+}
+
+.acclegs
+{
+	background-color: #FF3E3E;
+}
+
+.legs
+{
+	background-color: #FC913A;
+}
+
+.clearfix
+{
+	clear: both;
+}
+
