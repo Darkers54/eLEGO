@@ -34,7 +34,7 @@ wc_print_notices(); ?>
 	);
 	?>
 	<br>
-	<a href="http://localhost/eLEGO/boutique">TEST DE LIENS SUR LE COMPTE</a>
+	<a href="http://localhost/eLEGO/espace-client">Accéder à mon Espace Personel</a>
 </p>
 
 <?php do_action( 'woocommerce_before_my_account' ); ?>
