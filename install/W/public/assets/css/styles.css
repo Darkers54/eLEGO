@@ -140,6 +140,33 @@ footer>p
 	background-color: #FC913A;
 }
 
+@media print
+{
+	.noprint {display:none;}
+}
+
+#map 
+{
+    width: auto;
+    height:300px;
+}
+
+
+.carousel-page
+{
+
+	width:auto;
+	height:auto;
+	color: black;
+}
+
+.carousel-page img 
+{
+	padding-left: 12%;
+}
+
+
+
 .clearfix
 {
 	clear: both;

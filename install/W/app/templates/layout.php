@@ -16,7 +16,9 @@
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
 	<!-- Our Own Scripts ;) -->
 	<script src="<?= $this->assetUrl('js/construire.js') ?>" type="text/javascript" charset="utf-8" defer></script>
-	
+
+	<script src="http://maps.googleapis.com/maps/api/js"></script>
+	<script src="<?= $this->assetUrl('js/map.js') ?>" type="text/javascript" charset="utf-8" async defer></script>
 </head>
 <body>
 	<div class="container">
