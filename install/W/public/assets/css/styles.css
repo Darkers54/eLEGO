@@ -17,6 +17,39 @@ footer>p
 	text-align: center;
 }
 
+.config
+{
+	width: 96px;
+	height : 96px;
+	border: 1px solid gray;
+}
+
+#displayCosts select
+{
+	float:left;
+}
+
+#displayCosts p
+{
+	float:right;
+	margin-left: 5px;
+}
+
+#displayCosts #estimatedWeight
+{
+	float:right;
+}
+
+.figmobile
+{
+	float:left;
+}
+
+.figmobile figcaption
+{
+	text-align: center;
+}
+
 .legofont
 {
 	font-family: 'Legothick';
@@ -25,8 +58,14 @@ footer>p
 
 .logo
 {
-	width:200px;
-	height: 400px;
+	width:100px;
+	height: 200px;
+}
+
+.logo img
+{
+	width: 100px;
+	height:170px;
 }
 .liste
 {
@@ -52,12 +91,12 @@ footer>p
 	border: 1px solid gray;
 }
 
-.ac_head, .ac_chest
+.ac_head, .head, .ac_chest, .chest, .ac_legs, .legs
 {
 	margin-top: 10px;
 }
 
-.ac_head img, .ac_chest img
+.ac_head img, .head img, .ac_chest img, .chest img, .ac_legs img, .legs img
 {
 	width:	175px;
 	height: 175px;
@@ -78,14 +117,59 @@ footer>p
 	margin: 2px;
 }
 
-.retirer
+.z4acchead img, .z4head img, .z4accchest img, .z4chest img, .z4acclegs img, .z4legs img
 {
-	float: right;
+	margin-top:10px;
+	width:70px;
+	height:70px;
+	border: 1px solid gray;
 }
 
-.ajouter
+.visible-xs>img
+{
+	float: right;
+	width: 120px;
+	height:120px;
+	position:relative;
+}
+
+.visible-xs figcaption
+{
+	float: right;
+	position: absolute;
+	bottom: 10px;
+	right:10px;
+}
+
+#btnRemAccHead, #btnRemHead, #btnRemAccChest, #btnRemChest, #btnRemAccLegs, #btnRemLegs
 {
 	float: left;
+	width:30%;
+}
+
+#btnAddAccHead, #btnAddHead, #btnAddAccChest, #btnAddChest, #btnAddAccLegs, #btnAddLegs
+{
+	float: right;
+	width:30%;
+}
+
+#qtyAccHead, #qtyHead, #qtyAccChest, #qtyChest, #qtyAccLegs, #qtyLegs
+{
+	float:left;
+	width: 38%;
+	text-align: center;
+}
+
+.cmdbuttons button
+{
+	float: right;
+	margin: 30px 15px;
+	width: 100px;
+}
+
+.update
+{
+	float: right;
 }
 
 .zone3
@@ -95,14 +179,24 @@ footer>p
 
 .zone3 ul
 {
+	margin-top: 10px;
 	padding: 0;	
 	border: 1px solid gray;
+	position:relative;
+	margin-bottom: 40px;
 }
 
 .zone3 li
 {
 	list-style-type: none;
 	padding: 0;
+}
+
+.zone3 button
+{
+	position: absolute;
+	bottom:10px;
+	right: 15px;
 }
 
 .zone4 p

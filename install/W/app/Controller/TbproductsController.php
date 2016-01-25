@@ -4,23 +4,11 @@
 
 	class TbproductsController extends \W\Controller\Controller
 	{
-		/*
-		public function test()
-		{
-			$orderBy = 'prodCat';
-			$orderDir = "DESC";
-			$tbproductsManager = new \Manager\TbproductsManager();
-			$products = $tbproductsManager->findAll($orderBy, $orderDir);
-			$this->show('test/test', ['products' => $products]);
-			
-		}
-		*/
 		public function afficheLego()
 		{
 			$zone1 = 3;
 			$zone2 = 1;
 			$tbproductsManager = new \Manager\TbproductsManager();
-			/*$accHead = $tbproductsManager->getAllAcchead();*/
 			$z1accHead = $tbproductsManager->getParts($zone1, 1);
 			$z2accHead = $tbproductsManager->getParts($zone2, 1);
 			$z1head = $tbproductsManager->getParts($zone1, 2);
@@ -50,12 +38,84 @@
 			]);	
 		}
 
-		public function idLego($id)
+		public function afficheConfiguration()
+		{
+			$request = $_REQUEST;
+			$element1 = $request['element1'];
+			$element2 = $request['element2'];
+			$element3 = $request['element3'];
+			$element4 = $request['element4'];
+			$element5 = $request['element5'];
+			$element6 = $request['element6'];
+			$tbproductsManager = new \Manager\tbproductsManager();
+			$ligne1 = $tbproductsManager->getByID($element1);
+			$ligne2 = $tbproductsManager->getByID($element2);
+			$ligne3 = $tbproductsManager->getByID($element3);
+			$ligne4 = $tbproductsManager->getByID($element4);
+			$ligne5 = $tbproductsManager->getByID($element5);
+			$ligne6 = $tbproductsManager->getByID($element6);
+			$this->show('configuration/configuration', [
+				'ligne1' => $ligne1,
+				'ligne2' => $ligne2,
+				'ligne3' => $ligne3,
+				'ligne4' => $ligne4,
+				'ligne5' => $ligne5,
+				'ligne6' => $ligne6,
+			]);
+		}
+
+		public function idParts()
 		{
 			$request=$_REQUEST;
-			$idimg = $request['id_image'];
+			$idimg = $request['idimage'];
 			$tbproductsManager = new \Manager\TbproductsManager();
-			$mesInfos = $tbproductsManager->find($idimg);
-			return $mesInfos;
+			$mesInfos = $tbproductsManager->getByID($idimg);
+			$this->show('construire/value1', ['mesinfos' => $mesInfos]);
+		}
+
+		public function urlImg()
+		{
+			$request = $_REQUEST;
+			$idcat = $request['idcat'];
+			$newprodCatOrder = $request['newprodCatOrder'];
+			$tbproductsManager = new \Manager\TbproductsManager();
+			$monImage = $tbproductsManager->getImg($idcat, $newprodCatOrder);
+			$this->show('construire/value2', ['monImage' => $monImage]);
+		}
+
+		public function countImg()
+		{
+			$request = $_REQUEST;
+			$idcat = $request['idcat'];
+			$tbproductsManager = new \Manager\tbproductsManager();
+			$nbLines = $tbproductsManager->CountLinesByCat($idcat);
+			$this->show('construire/count', ['nblines' => $nbLines]);
+		}
+
+		public function desc()
+		{
+			$request=$_REQUEST;
+			$idimg = $request['idimage'];
+			$tbproductsManager = new \Manager\TbproductsManager();
+			$mesInfos = $tbproductsManager->getByID($idimg);
+			$this->show('construire/description', ['mesinfos' => $mesInfos]);
+		}
+
+		public function select()
+		{
+			$request=$_REQUEST;
+			$idimg = $request['idimage'];
+			$tbproductsManager = new \Manager\TbproductsManager();
+			$mesImages = $tbproductsManager->getByID($idimg);
+			$this->show('construire/selection', ['mesImages' => $mesImages]);
+		}
+
+		public function getStock()
+		{
+			$request = $_REQUEST;
+			$idPartToCheck = $request['myelement'];
+			$tbproductsManager = new \Manager\TbproductsManager();
+			$inStock = $tbproductsManager->getStockForThisPart($idPartToCheck);
+			$this->show('configuration/rtstock', ['inStock' => $inStock]);
 		}
 	}

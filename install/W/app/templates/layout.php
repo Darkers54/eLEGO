@@ -16,7 +16,7 @@
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
 	<!-- Our Own Scripts ;) -->
 	<script src="<?= $this->assetUrl('js/construire.js') ?>" type="text/javascript" charset="utf-8" defer></script>
-	
+	<script src="<?= $this->assetUrl('js/configuration.js') ?>" type="text/javascript" charset="utf-8" defer></script>
 </head>
 <body>
 	<div class="container">
@@ -37,10 +37,10 @@
 		    		<!-- Collect the nav links, forms, and other content for toggling -->
 		    		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 		      			<ul class="nav navbar-nav">
-		        			<li class="active"><a href="<?= $this->url('home'); ?>">Accueil<span class="sr-only">(current)</span></a></li>
+		        			<li><a href="<?= $this->url('home'); ?>">Accueil<span class="sr-only">(current)</span></a></li>
 		        			<li><a href="<?= $this->url('default_presentation'); ?>">Présentation</a></li>
 		        			<li><a href="<?= $this->url('default_contact'); ?>">Contact</a></li>
-		        			<li><a href="#">Boutique</a></li>
+		        			<li><a href="<?= $this->url('construire_construire'); ?>">Construire</a></li>
 		        			<li><a href="<?= $this->url('default_help'); ?>">Aide</a></li>
 		        			<li><a href="<?= $this->url('imex_home'); ?>" title="">Export</a></li>
 		      			</ul>
