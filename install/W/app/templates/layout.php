@@ -10,6 +10,7 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
 	<!-- Our Own StyleSheet ;) -->
 	<link rel="stylesheet" href="<?= $this->assetUrl('css/styles.css') ?>">
+	<link rel="stylesheet" href="<?= $this->assetUrl('css/home.css') ?>">
 	<!-- Ajax javascript-->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 	<!-- Latest compiled and minified JavaScript -->
