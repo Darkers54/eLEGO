@@ -33,8 +33,6 @@ wc_print_notices(); ?>
 		wc_customer_edit_account_url()
 	);
 	?>
-	<br>
-	<a href="http://localhost/eLEGO/boutique">TEST DE LIENS SUR LE COMPTE</a>
 </p>
 
 <?php do_action( 'woocommerce_before_my_account' ); ?>

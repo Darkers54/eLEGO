@@ -16,7 +16,7 @@
         <dt class="adress">e<span class="legofont">lego</span></dt>
         <dd>Rue Gino Raimondi<br>54490 Piennes</dd>
         <dd><span>Tel:</span>03.12.34.56.78</dd>
-        <dd><span>Nous Contacter: </span><a href="mailto:elego2016@gmail.com">elego2016@gmail.com</a></dd>
+        <dd><span><a href="<?= $this->url('default_contact'); ?>">Nous Contacter</a></span></dd>
     </address>
 
 	

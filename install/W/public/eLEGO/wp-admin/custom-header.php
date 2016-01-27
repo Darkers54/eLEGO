@@ -73,7 +73,21 @@ class Custom_Image_Header {
 	 *
 	 * @since 2.1.0
 	 */
-	
+	public function init() {
+		$page = add_theme_page( __( 'Header' ), __( 'Header' ), 'edit_theme_options', 'custom-header', array( $this, 'admin_page' ) );
+		if ( ! $page ) {
+			return;
+		}
+
+		add_action( "admin_print_scripts-$page", array( $this, 'js_includes' ) );
+		add_action( "admin_print_styles-$page", array( $this, 'css_includes' ) );
+		add_action( "admin_head-$page", array( $this, 'help' ) );
+		add_action( "admin_head-$page", array( $this, 'take_action' ), 50 );
+		add_action( "admin_head-$page", array( $this, 'js' ), 50 );
+		if ( $this->admin_header_callback ) {
+			add_action( "admin_head-$page", $this->admin_header_callback, 51 );
+		}
+	}
 
 	/**
 	 * Adds contextual help.

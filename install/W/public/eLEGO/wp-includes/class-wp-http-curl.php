@@ -75,7 +75,7 @@ class WP_Http_Curl {
 	 */
 	public function request($url, $args = array()) {
 		$defaults = array(
-			'method' => 'GET', 'timeout' => 10,
+			'method' => 'GET', 'timeout' => 5,
 			'redirection' => 5, 'httpversion' => '1.0',
 			'blocking' => true,
 			'headers' => array(), 'body' => null, 'cookies' => array()

@@ -20,6 +20,7 @@ class DefaultController extends Controller
 		$this->show('default/presentation');
 	}
 
+
 	public function contact()
 	{
 		$this->show('default/contact');

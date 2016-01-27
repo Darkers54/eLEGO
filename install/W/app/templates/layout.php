@@ -41,8 +41,9 @@
 		      			<ul class="nav navbar-nav">
 		        			<li class="active"><a href="<?= $this->url('home'); ?>">Accueil<span class="sr-only">(current)</span></a></li>
 		        			<li><a href="<?= $this->url('default_presentation'); ?>">Présentation</a></li>
+		        			<li><a href="http://localhost/eLEGO/boutique/"; ?>Boutique</a></li>
 		        			<li><a href="<?= $this->url('default_contact'); ?>">Contact</a></li>
-		        			<li><a href="#">Boutique</a></li>
+		        			<li><a href="http://localhost/eLEGO/mon-compte/">Connexion</a></li>
 		        			<li><a href="<?= $this->url('default_help'); ?>">Aide</a></li>
 		        			<li><a href="<?= $this->url('imex_home'); ?>" title="">Export</a></li>
 		      			</ul>
