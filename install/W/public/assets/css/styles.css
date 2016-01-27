@@ -23,11 +23,16 @@ footer>p
 	text-transform: uppercase;
 }
 
+<<<<<<< HEAD
 .logo
+=======
+.elego
+>>>>>>> origin/eLEGO_DEV_MM
 {
 	width:200px;
 	height: 400px;
 }
+<<<<<<< HEAD
 <<<<<<< HEAD
 
 .logos 
@@ -37,6 +42,8 @@ footer>p
 
 =======
 >>>>>>> origin/eLEGO_DEV_CG
+=======
+>>>>>>> origin/eLEGO_DEV_MM
 .liste
 {
 	float : left;
@@ -150,6 +157,7 @@ footer>p
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 @media print
 {
 	.noprint {display:none;}
@@ -179,8 +187,14 @@ footer>p
 
 =======
 >>>>>>> origin/eLEGO_DEV_CG
+=======
+>>>>>>> origin/eLEGO_DEV_MM
 .clearfix
 {
 	clear: both;
 }
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> origin/eLEGO_DEV_MM

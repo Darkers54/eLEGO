@@ -21,6 +21,7 @@ class DefaultController extends Controller
 	}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 	public function contact()
 	{
@@ -69,6 +70,13 @@ class DefaultController extends Controller
 
 
 >>>>>>> origin/eLEGO_DEV_CG
+=======
+	public function contact()
+	{
+		$this->show('default/contact');
+	}
+
+>>>>>>> origin/eLEGO_DEV_MM
 	public function mentions()
 	{
 		$this->show('default/mentions');

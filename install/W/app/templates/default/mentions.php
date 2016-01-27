@@ -1,6 +1,7 @@
 <?php $this->layout('layout', ['title' => 'Mentions légales']) ?>
 <?php $this->start('main_content') ?>
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 	 <div class="noprint">
 		<button type="button"><a href="javascript:window.print()">Imprimer cette page</a></button>
@@ -274,6 +275,8 @@
 			A défaut d’accord amiable, le client, s’il contracte en tant que consommateur, pourra engager une procédure devant la juridiction de son choix et s’il contracte en tant que professionnel, pourra engager une procédure devant le tribunal du lieu du siège social du vendeur.</p>
 
 =======
+=======
+>>>>>>> origin/eLEGO_DEV_MM
 	<h2>Article 1</h2>
 	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
 	tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
@@ -302,6 +305,9 @@
 	consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
 	cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
 	proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+<<<<<<< HEAD
 >>>>>>> origin/eLEGO_DEV_CG
+=======
+>>>>>>> origin/eLEGO_DEV_MM
 
 <?php $this->stop('main_content') ?>
