@@ -1,1 +1,0 @@
-<?php foreach($inStock as $part) : ?><?= $part['prodNbStock'] ?><?php endforeach; ?>
