@@ -4,48 +4,55 @@
 	<p>Cela ne se voit pas encore, mais ceci est un formulaire de contact comportant les informations
 	nécessaires à l'enregistrement dans la table tbusers.</p>
 
-	<form enctype="multipart/form-data" method="post" class="formctct"  >
+	<form enctype="multipart/form-data" method="post" class="form-horizontal well well-sm"  >
 		<div class="divformchamps">
 			<fieldset>
 				<h3>Nous Contacter :</h3>
 				
-				<div  class="divformctct col-lg-6">
-    				<label  class="formlabelcontact">Nom :
+				<div  class="form-group">
+    				<label  class="col-md-4 control-label">Nom :
     					<span class="formctctreq">*</span>
+    					<input type="text" required name="ctctname" class="form-control input-md"  />
     				</label>
-    				<input type="text" required name="ctctname"  />	  
+    					  
 				</div>
-				<div  class="divformctct col-lg-6">
-   				 	<label class="formlabelctct">Prénom :
+				<div  class="form-group">
+   				 	<label class="col-md-4 control-label">Prénom :
         				<span class="formctctreq">*</span>
-    				<input type="text" required name="ctctfirstname" /></label>   
+    					<input type="text" required name="ctctfirstname" class="form-control input-md" />
+    				</label>   
 				</div>
-				<div  class="divformctct col-lg-6">
-   				 	<label class="formlabelctct">Raison sociale :
-    				<input type="text" name="ctctfirm" /></label>   
+				<div  class="form-group">
+   				 	<label class="col-md-4 control-label">Raison sociale :
+    					<input type="text" name="ctctfirm" class="form-control input-md" />
+    				</label>   
 				</div>
-				<div  class="divformctct col-lg-6">
-    				<label class="formlabelctct">Adresse e-mail : 
+				<div  class="form-group">
+    				<label class="col-md-4 control-label">Adresse e-mail : 
         				<span class="formctctreq">*</span>
+    					<input type="email" required name="ctctmail" class="form-control input-md" />
     				</label>
-    				<input type="email" required name="ctctmail" />
+    				
 				</div>
-				<div  class="divformctct col-lg-12">
-   				 	<label class="formlabelctct">Objet :
+				<div  class="form-group">
+   				 	<label class="col-md-4 control-label">Objet :
         				<span class="formctctreq">*</span>
-    				<input type="text" required name="ctctobject" /></label>   
+    					<input type="text" required name="ctctobject" class="form-control input-md"/>
+    				</label>   
 				</div>
-				<div  class="divformctct col-lg-12">
-    				<label  class="formlabelctct">Message :
-        				<span class="formctctreq">*</span>
+				<div  class="form-group">
+    				<label  class="col-md-4 control-label">Message :
+        				<span class="formctctreq">*</span><br>
+    					<textarea name="txtctctmessage"  value ="test"required rows="8"></textarea>
     				</label>
-    				<br>
-    				<textarea name="txtctctmessage"  value ="test"required rows="8"></textarea>
+    				<br>	
 				</div>
-				<input type="hidden" name="hidbtnctct" value="" />
-				<div class="formctctsubmit col-lg-12">
-					<input type="submit" value="Soumettre" name="btnctctsubmit" /><br>
-					<span>Les champs marqués d'une astérisque sont obligatoires.</span>
+				<div class="form-group">
+					<div class="col-md-4 col-md-offset-4">
+						<input type="hidden" name="hidbtnctct" value="" />
+						<input type="submit" value="Soumettre" name="btnctctsubmit" class="form-control input-md" /><br>
+						<span>Les champs marqués d'une astérisque sont obligatoires.</span>
+					</div>
 				</div>
 			</fieldset>
 		</div>
@@ -57,7 +64,6 @@
 						<dd>Rue Gino Raimondi</dd>
 						<dd>54490 Piennes</dd>
 						<dd><span>Tel:</span>03.12.34.56.78</dd>
-						<dd><span>Nous contacter: </span><a href="mailto: elego2016@gmail.com">elego2016@gmail.com</a></dd>
 					</dt>
 				</address>
 			</article>

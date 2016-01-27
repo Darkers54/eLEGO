@@ -39,6 +39,7 @@
 		      			<ul class="nav navbar-nav">
 		        			<li class="active"><a href="<?= $this->url('home'); ?>">Accueil<span class="sr-only">(current)</span></a></li>
 		        			<li><a href="<?= $this->url('default_presentation'); ?>">Présentation</a></li>
+		        			<li><a href="<?= $this->url('default_inscription'); ?>">Inscription</a></li>
 		        			<li><a href="<?= $this->url('default_contact'); ?>">Contact</a></li>
 		        			<li><a href="#">Boutique</a></li>
 		        			<li><a href="<?= $this->url('default_help'); ?>">Aide</a></li>

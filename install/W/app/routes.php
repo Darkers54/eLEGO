@@ -6,6 +6,8 @@
 		['GET', '/construire', 'tbproducts#afficheLego', 'construire_construire'],
 		['GET', '/construire/[:id]', 'tbproducts#idLego', 'construire_idlego'],
 		['GET', '/presentation', 'Default#presentation', 'default_presentation'],
+		['GET', '/inscription', 'Default#inscription', 'default_inscription'],
+		['POST', '/inscription', 'tbusers#createinscription', 'default_createinscription'],
 		['GET', '/contact', 'Default#contact', 'default_contact'],
 		['POST', '/contact', 'tbclients#createcontact', 'default_createcontact'],
 		['GET', '/mentions', 'Default#mentions', 'default_mentions'],
