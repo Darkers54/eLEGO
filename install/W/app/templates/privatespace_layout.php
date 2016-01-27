@@ -11,6 +11,7 @@
 	<!-- Our Own StyleSheet ;) -->
 	<link rel="stylesheet" href="<?= $this->assetUrl('css/styles.css') ?>">
 	<link rel="stylesheet" href="<?= $this->assetUrl('css/home.css') ?>">
+	<link rel="stylesheet" href="<?= $this->assetUrl('css/userspace.css') ?>">
 	<!-- Ajax javascript-->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 	<!-- Latest compiled and minified JavaScript -->
@@ -20,7 +21,7 @@
 	
 </head>
 <body>
-	<div class="container">
+	<div class="containerlayoutus">
 		<header>
 			<nav class="navbar navbar-default navbar-fixed-top">
 		  		<div class="container-fluid">
@@ -38,22 +39,19 @@
 		    		<!-- Collect the nav links, forms, and other content for toggling -->
 		    		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 		      			<ul class="nav navbar-nav">
-		        			<li class="active"><a href="<?= $this->url('home'); ?>">Accueil<span class="sr-only">(current)</span></a></li>
-		        			<li><a href="<?= $this->url('default_presentation'); ?>">Présentation</a></li>
-		        			<li><a href="<?= $this->url('privatespace_privatespace'); ?>">Espace personnel</a></li>
-		        			<li><a href="<?= $this->url('default_contact'); ?>">Contact</a></li>
-		        			<li><a href="#">Boutique</a></li>
-		        			<li><a href="<?= $this->url('default_help'); ?>">Aide</a></li>
-		        			<li><a href="<?= $this->url('imex_home'); ?>" title="">Export</a></li>
+		        			<li><a href="<?= $this->url('home'); ?>">Accueil<span class="sr-only">(current)</span></a></li>
+		        			<li><a href="#">Gestion de profil</a></li>
+		        			<li><a href="<?= $this->url('privatespace_collection'); ?>">Collection</a></li>
+		        			<li><a href="#">SAV</a></li>
+		        			<li><a href="#">Forum</a></li>
+		        			
 		      			</ul>
 		    		</div><!-- /.navbar-collapse -->
 		  		</div><!-- /.container-fluid -->
 			</nav>
 			<h1>W :: <?= $this->e($title) ?></h1>
 		</header>
-		<div class="logo">
-			<img src="<?= $this->assetUrl('img/truc.jpg'); ?>" alt="imagelego">
-		</div>
+
 		<section>
 
 			<?= $this->section('main_content') ?>
