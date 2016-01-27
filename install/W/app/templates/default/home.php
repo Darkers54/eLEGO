@@ -5,6 +5,7 @@
 <<<<<<< HEAD
 	<img src="/assets/img/presentation.jpg" title="eLEGO" legend="Présentation de l'entreprise eLEGO" alt="logo_LEGO"/>
 
+<<<<<<< HEAD
 	<p>Fondée en Janvier 2016 à la suite d'un projet de développement pour l'école numérique WebForce3,
 	la société e<span class="legofont">lego</span> a commencé son activité à Piennes en France.</p>
 
@@ -123,4 +124,7 @@
 		
 	<div class="clearfix"></div>
 >>>>>>> origin/eLEGO_DEV_MM
+=======
+
+>>>>>>> origin/eLEGO_DEV_AO
 <?php $this->stop('main_content') ?>

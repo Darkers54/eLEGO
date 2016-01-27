@@ -17,6 +17,39 @@ footer>p
 	text-align: center;
 }
 
+.config
+{
+	width: 96px;
+	height : 96px;
+	border: 1px solid gray;
+}
+
+#displayCosts select
+{
+	float:left;
+}
+
+#displayCosts p
+{
+	float:right;
+	margin-left: 5px;
+}
+
+#displayCosts #estimatedWeight
+{
+	float:right;
+}
+
+.figmobile
+{
+	float:left;
+}
+
+.figmobile figcaption
+{
+	text-align: center;
+}
+
 .legofont
 {
 	font-family: 'Legothick';
@@ -29,6 +62,7 @@ footer>p
 .elego
 >>>>>>> origin/eLEGO_DEV_MM
 {
+<<<<<<< HEAD
 	width:200px;
 	height: 400px;
 }
@@ -44,6 +78,17 @@ footer>p
 >>>>>>> origin/eLEGO_DEV_CG
 =======
 >>>>>>> origin/eLEGO_DEV_MM
+=======
+	width:100px;
+	height: 200px;
+}
+
+.logo img
+{
+	width: 100px;
+	height:170px;
+}
+>>>>>>> origin/eLEGO_DEV_AO
 .liste
 {
 	float : left;
@@ -68,12 +113,20 @@ footer>p
 	border: 1px solid gray;
 }
 
+<<<<<<< HEAD
 .ac_head, .ac_chest
+=======
+.ac_head, .head, .ac_chest, .chest, .ac_legs, .legs
+>>>>>>> origin/eLEGO_DEV_AO
 {
 	margin-top: 10px;
 }
 
+<<<<<<< HEAD
 .ac_head img, .ac_chest img
+=======
+.ac_head img, .head img, .ac_chest img, .chest img, .ac_legs img, .legs img
+>>>>>>> origin/eLEGO_DEV_AO
 {
 	width:	175px;
 	height: 175px;
@@ -94,6 +147,7 @@ footer>p
 	margin: 2px;
 }
 
+<<<<<<< HEAD
 .retirer
 {
 	float: right;
@@ -102,6 +156,61 @@ footer>p
 .ajouter
 {
 	float: left;
+=======
+.z4acchead img, .z4head img, .z4accchest img, .z4chest img, .z4acclegs img, .z4legs img
+{
+	margin-top:10px;
+	width:70px;
+	height:70px;
+	border: 1px solid gray;
+}
+
+.visible-xs>img
+{
+	float: right;
+	width: 120px;
+	height:120px;
+	position:relative;
+}
+
+.visible-xs figcaption
+{
+	float: right;
+	position: absolute;
+	bottom: 10px;
+	right:10px;
+}
+
+#btnRemAccHead, #btnRemHead, #btnRemAccChest, #btnRemChest, #btnRemAccLegs, #btnRemLegs
+{
+	float: left;
+	width:30%;
+}
+
+#btnAddAccHead, #btnAddHead, #btnAddAccChest, #btnAddChest, #btnAddAccLegs, #btnAddLegs
+{
+	float: right;
+	width:30%;
+}
+
+#qtyAccHead, #qtyHead, #qtyAccChest, #qtyChest, #qtyAccLegs, #qtyLegs
+{
+	float:left;
+	width: 38%;
+	text-align: center;
+}
+
+.cmdbuttons button
+{
+	float: right;
+	margin: 30px 15px;
+	width: 100px;
+}
+
+.update
+{
+	float: right;
+>>>>>>> origin/eLEGO_DEV_AO
 }
 
 .zone3
@@ -111,8 +220,16 @@ footer>p
 
 .zone3 ul
 {
+<<<<<<< HEAD
 	padding: 0;	
 	border: 1px solid gray;
+=======
+	margin-top: 10px;
+	padding: 0;	
+	border: 1px solid gray;
+	position:relative;
+	margin-bottom: 40px;
+>>>>>>> origin/eLEGO_DEV_AO
 }
 
 .zone3 li
@@ -121,6 +238,16 @@ footer>p
 	padding: 0;
 }
 
+<<<<<<< HEAD
+=======
+.zone3 button
+{
+	position: absolute;
+	bottom:10px;
+	right: 15px;
+}
+
+>>>>>>> origin/eLEGO_DEV_AO
 .zone4 p
 {
 	font-size: small;
@@ -158,6 +285,7 @@ footer>p
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 @media print
 {
 	.noprint {display:none;}
@@ -189,12 +317,17 @@ footer>p
 >>>>>>> origin/eLEGO_DEV_CG
 =======
 >>>>>>> origin/eLEGO_DEV_MM
+=======
+>>>>>>> origin/eLEGO_DEV_AO
 .clearfix
 {
 	clear: both;
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
 >>>>>>> origin/eLEGO_DEV_MM
+=======
+>>>>>>> origin/eLEGO_DEV_AO
