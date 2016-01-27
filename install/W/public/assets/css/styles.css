@@ -28,12 +28,15 @@ footer>p
 	width:200px;
 	height: 400px;
 }
+<<<<<<< HEAD
 
 .logos 
 {
 	
 }
 
+=======
+>>>>>>> origin/eLEGO_DEV_CG
 .liste
 {
 	float : left;
@@ -146,6 +149,7 @@ footer>p
 	background-color: #FC913A;
 }
 
+<<<<<<< HEAD
 @media print
 {
 	.noprint {display:none;}
@@ -173,6 +177,8 @@ footer>p
 
 
 
+=======
+>>>>>>> origin/eLEGO_DEV_CG
 .clearfix
 {
 	clear: both;

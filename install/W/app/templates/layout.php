@@ -16,9 +16,13 @@
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
 	<!-- Our Own Scripts ;) -->
 	<script src="<?= $this->assetUrl('js/construire.js') ?>" type="text/javascript" charset="utf-8" defer></script>
+<<<<<<< HEAD
 
 	<script src="http://maps.googleapis.com/maps/api/js"></script>
 	<script src="<?= $this->assetUrl('js/map.js') ?>" type="text/javascript" charset="utf-8" async defer></script>
+=======
+	
+>>>>>>> origin/eLEGO_DEV_CG
 </head>
 <body>
 	<div class="container">
@@ -41,9 +45,15 @@
 		      			<ul class="nav navbar-nav">
 		        			<li class="active"><a href="<?= $this->url('home'); ?>">Accueil<span class="sr-only">(current)</span></a></li>
 		        			<li><a href="<?= $this->url('default_presentation'); ?>">Présentation</a></li>
+<<<<<<< HEAD
 		        			<li><a href="http://localhost/eLEGO/boutique/"; ?>Boutique</a></li>
 		        			<li><a href="<?= $this->url('default_contact'); ?>">Contact</a></li>
 		        			<li><a href="http://localhost/eLEGO/mon-compte/">Connexion</a></li>
+=======
+		        			<li><a href="<?= $this->url('default_inscription'); ?>">Inscription</a></li>
+		        			<li><a href="<?= $this->url('default_contact'); ?>">Contact</a></li>
+		        			<li><a href="#">Boutique</a></li>
+>>>>>>> origin/eLEGO_DEV_CG
 		        			<li><a href="<?= $this->url('default_help'); ?>">Aide</a></li>
 		        			<li><a href="<?= $this->url('imex_home'); ?>" title="">Export</a></li>
 		      			</ul>

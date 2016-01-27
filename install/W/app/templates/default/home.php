@@ -1,6 +1,7 @@
 <?php $this->layout('layout', ['title' => 'Accueil']) ?>
 <?php $this->start('main_content') ?>
 	<h2>Bienvenue sur la boutique e<span class="legofont">lego</span></h2>
+<<<<<<< HEAD
 	<img src="/assets/img/presentation.jpg" title="eLEGO" legend="Présentation de l'entreprise eLEGO" alt="logo_LEGO"/>
 
 	<p>Fondée en Janvier 2016 à la suite d'un projet de développement pour l'école numérique WebForce3,
@@ -20,5 +21,7 @@
     </address>
 
 	
+=======
+>>>>>>> origin/eLEGO_DEV_CG
 
 <?php $this->stop('main_content') ?>
