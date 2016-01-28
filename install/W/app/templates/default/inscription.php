@@ -26,7 +26,7 @@
 				<div  class="form-group">
    				 	<label class="col-md-4 control-label">Mot de passe :
    				 		<span class="forminscreq">*</span>
-    					<input type="password" name="inspassword" class="form-control input-md" />
+    					<input type="password" name="inspassword" required class="form-control input-md" />
     				</label>   
 				</div>
 				<div  class="form-group">
