@@ -1,0 +1,1 @@
+<?php foreach($costs as $cost) : ?><?= $cost['dawcCosts']; ?><?php endforeach; ?>
