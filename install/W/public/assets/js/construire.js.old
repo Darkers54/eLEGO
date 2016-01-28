@@ -1,0 +1,1222 @@
+
+$(function(){
+
+
+	var images_stockees= [];
+/*
+	Quand je clique sur une image elle s'affiche 
+*/
+
+
+	
+	//Previous Ligne 1 : Quand je clique sur la div previous des accessoires tête :
+	
+
+	
+	$('#prevAccHead').on('click', function()
+	{
+		var id = $('#z2acchead>img').attr('id');
+		//console.log(id); //DEBUG
+
+		var ajax_data =
+		{
+			idimage : id,
+		};
+
+		var ajax_options = 
+		{
+			url: '/construire/value1',
+			method :'GET',
+			data: ajax_data,
+			success: function(data)
+			{
+				catOrder = parseInt(data);
+
+				if(catOrder <= 1)
+				{
+					return 0;
+				}
+
+				newprodCatOrder = catOrder -1;
+				var ajax_data2 =
+				{
+					newprodCatOrder,
+					idcat : 1,
+				};
+
+				var ajax_options2 = 
+				{
+					url: '/construire/value2',
+					method: 'GET',
+					data: ajax_data2,
+					success: function(data2)
+					{
+						var path = data2;
+						$('#z2acchead>img').remove();
+						$('#z2acchead>figcaption').remove();
+						$('#z2acchead').append(path);
+						var figcaption = '<figcaption>Accessoire de tête '+$('#z2acchead>img').attr('id')+'</figcaption>';
+						$('#z2acchead').append(figcaption);
+
+						var id2 = $('#z2acchead>img').attr('id');
+						//console.log(id2); //DEBUG
+						var ajax_data3 =
+						{
+							idimage : id2,
+						};
+
+						var ajax_options3 = 
+						{
+							url: '/construire/description',
+							method: 'GET',
+							data: ajax_data3,
+							success: function(data3)
+							{
+								var list = data3;
+								$('#z3accHead>ul').remove();
+								$('#z3accHead').append(list);
+							}
+						}
+						$.ajax(ajax_options3);
+					}
+				}
+				$.ajax(ajax_options2);
+			}
+		}
+		$.ajax(ajax_options);
+	});
+
+	
+	//Next Ligne 1 :Quand je clique sur la div next des accessoires têtes:
+	
+
+	$('#nextAccHead').on('click', function()
+	{
+		var nblinestotal=0;
+		var nb_lines =
+		{
+			idcat: 1,
+		};
+
+		var nb_lines_options =
+		{
+			url:'/construire/count',
+			method : 'GET',
+			data: nb_lines,
+			success: function(count)
+			{
+				//console.log(count); //DEBUG
+				nblinestotal = parseInt(count);
+
+				// afficher le détail des pièces plus le bouton ajouter et retirer
+				var id = $('#z2acchead>img').attr('id');
+				//console.log(id); //DEBUG
+				var ajax_data =
+				{
+					idimage : id,
+				};
+				
+				var ajax_options = 
+				{
+					url: '/construire/value1',
+					method :'GET',
+					data: ajax_data,
+					success: function(data)
+					{
+						catOrder = parseInt(data);
+						//console.log(catOrder); //DEBUG
+						//console.log(nblinestotal); //DEBUG
+						if(catOrder >= nblinestotal)
+						{
+							return 0;
+						}
+						
+						newprodCatOrder = catOrder +1;
+						var ajax_data2 =
+						{
+							newprodCatOrder,
+							idcat : 1,
+						};
+
+						var ajax_options2 = 
+						{
+							url: '/construire/value2',
+							method: 'GET',
+							data: ajax_data2,
+							success: function(data2)
+							{
+								//console.log(data2); //DEBUG
+								var path = data2;
+								$('#z2acchead>img').remove();
+								$('#z2acchead>figcaption').remove();
+								$('#z2acchead').append(path);
+								var figcaption = '<figcaption>Accessoire de tête '+$('#z2acchead>img').attr('id')+'</figcaption>';
+								$('#z2acchead').append(figcaption);
+
+								var id2 = $('#z2acchead>img').attr('id');
+								//console.log(id2); //DEBUG
+								var ajax_data3 =
+								{
+									idimage : id2,
+								};
+
+								var ajax_options3 = 
+								{
+									url: '/construire/description',
+									method: 'GET',
+									data: ajax_data3,
+									success: function(data3)
+									{
+										var list = data3;
+										$('#z3accHead>ul').remove();
+										$('#z3accHead').append(list);
+									}
+								}
+								$.ajax(ajax_options3);
+							}
+						}
+						$.ajax(ajax_options2);
+					}
+				}
+				$.ajax(ajax_options);
+			}
+		}
+		$.ajax(nb_lines_options);
+	});
+
+	
+	//Selection Ligne 1 :Quand je clique sur la div update des accessoires têtes :
+
+	$('#btnUpdAccHead').on('click', function()
+	{
+		var id3 = $('#z2acchead>img').attr('id');
+		//console.log(id3); //DEBUG
+		var currentimg = 
+		{
+			idimage: id3,
+		};
+
+		var currentimg_options = 
+		{
+			url: '/construire/selection',
+			method: 'GET',
+			data: currentimg,
+			success: function(img)
+			{
+				//console.log(img); //DEBUG
+				var selectedimg = img;
+				$('#z4acchead>img').remove();
+				$('#z4acchead').append(selectedimg);
+			}
+		}
+		$.ajax(currentimg_options);
+	});
+
+/*
+	Previous Ligne 2 : Quand je clique sur la div previous des têtes :
+	*/
+	$('#prevHead').on('click', function()
+	{
+		var id = $('#z2head>img').attr('id');
+		//console.log(id); //DEBUG
+
+		var ajax_data =
+		{
+			idimage : id,
+		};
+
+		var ajax_options = 
+		{
+			url: '/construire/value1',
+			method :'GET',
+			data: ajax_data,
+			success: function(data)
+			{
+				catOrder = parseInt(data);
+
+				if(catOrder <= 1)
+				{
+					return 0;
+				}
+
+				newprodCatOrder = catOrder -1;
+				var ajax_data2 =
+				{
+					newprodCatOrder,
+					idcat : 2,
+				};
+
+				var ajax_options2 = 
+				{
+					url: '/construire/value2',
+					method: 'GET',
+					data: ajax_data2,
+					success: function(data2)
+					{
+						var path = data2;
+						$('#z2head>img').remove();
+						$('#z2head>figcaption').remove();
+						$('#z2head').append(path);
+						var figcaption = '<figcaption>Tête '+$('#z2head>img').attr('id')+'</figcaption>';
+						$('#z2head').append(figcaption);
+
+						var id2 = $('#z2head>img').attr('id');
+						//console.log(id2); //DEBUG
+						var ajax_data3 =
+						{
+							idimage : id2,
+						};
+
+						var ajax_options3 = 
+						{
+							url: '/construire/description',
+							method: 'GET',
+							data: ajax_data3,
+							success: function(data3)
+							{
+								var list = data3;
+								$('#z3head>ul').remove();
+								$('#z3head').append(list);
+							}
+						}
+						$.ajax(ajax_options3);
+					}
+				}
+				$.ajax(ajax_options2);
+			}
+		}
+		$.ajax(ajax_options);
+	});
+
+/*
+		Next Ligne 2 :Quand je clique sur la div next des têtes:
+	*/
+	$('#nextHead').on('click', function()
+	{
+		var nblinestotal=0;
+		var nb_lines =
+		{
+			idcat: 2,
+		};
+
+		var nb_lines_options =
+		{
+			url:'/construire/count',
+			method : 'GET',
+			data: nb_lines,
+			success: function(count)
+			{
+				//console.log(count); //DEBUG
+				nblinestotal = parseInt(count);
+
+				// afficher le détail des pièces plus le bouton ajouter et retirer
+				var id = $('#z2head>img').attr('id');
+				//console.log(id); //DEBUG
+				var ajax_data =
+				{
+					idimage : id,
+				};
+				
+				var ajax_options = 
+				{
+					url: '/construire/value1',
+					method :'GET',
+					data: ajax_data,
+					success: function(data)
+					{
+						catOrder = parseInt(data);
+						//console.log(catOrder); //DEBUG
+						//console.log(nblinestotal); //DEBUG
+						if(catOrder >= nblinestotal)
+						{
+							return 0;
+						}
+						
+						newprodCatOrder = catOrder +1;
+						var ajax_data2 =
+						{
+							newprodCatOrder,
+							idcat : 2,
+						};
+
+						var ajax_options2 = 
+						{
+							url: '/construire/value2',
+							method: 'GET',
+							data: ajax_data2,
+							success: function(data2)
+							{
+								//console.log(data2); //DEBUG
+								var path = data2;
+								$('#z2head>img').remove();
+								$('#z2head>figcaption').remove();
+								$('#z2head').append(path);
+								var figcaption = '<figcaption>Tête '+$('#z2head>img').attr('id')+'</figcaption>';
+								$('#z2head').append(figcaption);
+
+								var id2 = $('#z2head>img').attr('id');
+								//console.log(id2); //DEBUG
+								var ajax_data3 =
+								{
+									idimage : id2,
+								};
+
+								var ajax_options3 = 
+								{
+									url: '/construire/description',
+									method: 'GET',
+									data: ajax_data3,
+									success: function(data3)
+									{
+										var list = data3;
+										$('#z3head>ul').remove();
+										$('#z3head').append(list);
+									}
+								}
+								$.ajax(ajax_options3);
+							}
+						}
+						$.ajax(ajax_options2);
+					}
+				}
+				$.ajax(ajax_options);
+			}
+		}
+		$.ajax(nb_lines_options);
+	});
+/*
+		Selection Ligne 2 :Quand je clique sur la div update des têtes :
+	*/
+	$('#btnUpdHead').on('click', function()
+	{
+		var id3 = $('#z2head>img').attr('id');
+		//console.log(id3); //DEBUG
+		var currentimg = 
+		{
+			idimage: id3,
+		};
+
+		var currentimg_options = 
+		{
+			url: '/construire/selection',
+			method: 'GET',
+			data: currentimg,
+			success: function(img)
+			{
+				//console.log(img); //DEBUG
+				var selectedimg = img;
+				$('#z4head>img').remove();
+				$('#z4head').append(selectedimg);
+			}
+		}
+		$.ajax(currentimg_options);
+	});
+
+/*
+	Previous Ligne 3 : Quand je clique sur la div previous des accessoires buste :
+	*/
+	$('#prevAccChest').on('click', function()
+	{
+		var id = $('#z2accchest>img').attr('id');
+		//console.log(id); //DEBUG
+
+		var ajax_data =
+		{
+			idimage : id,
+		};
+
+		var ajax_options = 
+		{
+			url: '/construire/value1',
+			method :'GET',
+			data: ajax_data,
+			success: function(data)
+			{
+				catOrder = parseInt(data);
+
+				if(catOrder <= 1)
+				{
+					return 0;
+				}
+
+				newprodCatOrder = catOrder -1;
+				var ajax_data2 =
+				{
+					newprodCatOrder,
+					idcat : 3,
+				};
+
+				var ajax_options2 = 
+				{
+					url: '/construire/value2',
+					method: 'GET',
+					data: ajax_data2,
+					success: function(data2)
+					{
+						var path = data2;
+						$('#z2accchest>img').remove();
+						$('#z2accchest>figcaption').remove();
+						$('#z2accchest').append(path);
+						var figcaption = '<figcaption>Accessoire de buste '+$('#z2accchest>img').attr('id')+'</figcaption>';
+						$('#z2accchest').append(figcaption);
+
+						var id2 = $('#z2accchest>img').attr('id');
+						//console.log(id2); //DEBUG
+						var ajax_data3 =
+						{
+							idimage : id2,
+						};
+
+						var ajax_options3 = 
+						{
+							url: '/construire/description',
+							method: 'GET',
+							data: ajax_data3,
+							success: function(data3)
+							{
+								var list = data3;
+								$('#z3accChest>ul').remove();
+								$('#z3accChest').append(list);
+							}
+						}
+						$.ajax(ajax_options3);
+					}
+				}
+				$.ajax(ajax_options2);
+			}
+		}
+		$.ajax(ajax_options);
+	});
+
+/*
+	Next Ligne 3 :Quand je clique sur la div next des accessoires buste:
+	*/
+
+	$('#nextAccChest').on('click', function()
+	{
+		var nblinestotal=0;
+		var nb_lines =
+		{
+			idcat: 3,
+		};
+
+		var nb_lines_options =
+		{
+			url:'/construire/count',
+			method : 'GET',
+			data: nb_lines,
+			success: function(count)
+			{
+				//console.log(count); //DEBUG
+				nblinestotal = parseInt(count);
+
+				// afficher le détail des pièces plus le bouton ajouter et retirer
+				var id = $('#z2accchest>img').attr('id');
+				//console.log(id); //DEBUG
+				var ajax_data =
+				{
+					idimage : id,
+				};
+
+				var ajax_options = 
+				{
+					url: '/construire/value1',
+					method :'GET',
+					data: ajax_data,
+					success: function(data)
+					{
+						catOrder = parseInt(data);
+						//console.log(catOrder); //DEBUG
+						//console.log(nblinestotal); //DEBUG
+						if(catOrder >= nblinestotal)
+						{
+							return 0;
+						}
+						
+						newprodCatOrder = catOrder +1;
+						var ajax_data2 =
+						{
+							newprodCatOrder,
+							idcat : 3,
+						};
+
+						var ajax_options2 = 
+						{
+							url: '/construire/value2',
+							method: 'GET',
+							data: ajax_data2,
+							success: function(data2)
+							{
+								//console.log(data2); //DEBUG
+								var path = data2;
+								$('#z2accchest>img').remove();
+								$('#z2accchest>figcaption').remove();
+								$('#z2accchest').append(path);
+								var figcaption = '<figcaption>Accessoire de buste '+$('#z2accchest>img').attr('id')+'</figcaption>';
+								$('#z2accchest').append(figcaption);
+
+								var id2 = $('#z2accchest>img').attr('id');
+								//console.log(id2); //DEBUG
+								var ajax_data3 =
+								{
+									idimage : id2,
+								};
+
+								var ajax_options3 = 
+								{
+									url: '/construire/description',
+									method: 'GET',
+									data: ajax_data3,
+									success: function(data3)
+									{
+										var list = data3;
+										$('#z3accChest>ul').remove();
+										$('#z3accChest').append(list);
+									}
+								}
+								$.ajax(ajax_options3);
+							}
+						}
+						$.ajax(ajax_options2);
+					}
+				}
+				$.ajax(ajax_options);
+			}
+		}
+		$.ajax(nb_lines_options);
+	});
+
+/*
+		Selection Ligne 3 :Quand je clique sur la div update des accessoires buste :
+	*/
+	$('#btnUpdAccChest').on('click', function()
+	{
+		var id3 = $('#z2accchest>img').attr('id');
+		//console.log(id3); //DEBUG
+		var currentimg = 
+		{
+			idimage: id3,
+		};
+
+		var currentimg_options = 
+		{
+			url: '/construire/selection',
+			method: 'GET',
+			data: currentimg,
+			success: function(img)
+			{
+				//console.log(img); //DEBUG
+				var selectedimg = img;
+				$('#z4accchest>img').remove();
+				$('#z4accchest').append(selectedimg);
+			}
+		}
+		$.ajax(currentimg_options);
+	});
+
+	
+/*
+	Previous Ligne 4 : Quand je clique sur la div previous des bustes :
+	*/
+	$('#prevChest').on('click', function()
+	{
+		var id = $('#z2chest>img').attr('id');
+		//console.log(id); //DEBUG
+
+		var ajax_data =
+		{
+			idimage : id,
+		};
+
+		var ajax_options = 
+		{
+			url: '/construire/value1',
+			method :'GET',
+			data: ajax_data,
+			success: function(data)
+			{
+				catOrder = parseInt(data);
+
+				if(catOrder <= 1)
+				{
+					return 0;
+				}
+
+				newprodCatOrder = catOrder -1;
+				var ajax_data2 =
+				{
+					newprodCatOrder,
+					idcat : 4,
+				};
+
+				var ajax_options2 = 
+				{
+					url: '/construire/value2',
+					method: 'GET',
+					data: ajax_data2,
+					success: function(data2)
+					{
+						var path = data2;
+						$('#z2chest>img').remove();
+						$('#z2chest>figcaption').remove();
+						$('#z2chest').append(path);
+						var figcaption = '<figcaption>Buste '+$('#z2chest>img').attr('id')+'</figcaption>';
+						$('#z2chest').append(figcaption);
+
+						var id2 = $('#z2chest>img').attr('id');
+						//console.log(id2); //DEBUG
+						var ajax_data3 =
+						{
+							idimage : id2,
+						};
+
+						var ajax_options3 = 
+						{
+							url: '/construire/description',
+							method: 'GET',
+							data: ajax_data3,
+							success: function(data3)
+							{
+								var list = data3;
+								$('#z3chest>ul').remove();
+								$('#z3chest').append(list);
+							}
+						}
+						$.ajax(ajax_options3);
+					}
+				}
+				$.ajax(ajax_options2);
+			}
+		}
+		$.ajax(ajax_options);
+	});
+/*
+		Next Ligne 4 :Quand je clique sur la div next des bustes:
+	*/
+
+	$('#nextChest').on('click', function()
+	{
+		var nblinestotal=0;
+		var nb_lines =
+		{
+			idcat: 4,
+		};
+
+		var nb_lines_options =
+		{
+			url:'/construire/count',
+			method : 'GET',
+			data: nb_lines,
+			success: function(count)
+			{
+				//console.log(count); //DEBUG
+				nblinestotal = parseInt(count);
+
+				// afficher le détail des pièces plus le bouton ajouter et retirer
+				var id = $('#z2chest>img').attr('id');
+				//console.log(id); //DEBUG
+				var ajax_data =
+				{
+					idimage : id,
+				};
+
+				var ajax_options = 
+				{
+					url: '/construire/value1',
+					method :'GET',
+					data: ajax_data,
+					success: function(data)
+					{
+						catOrder = parseInt(data);
+						//console.log(catOrder); //DEBUG
+						//console.log(nblinestotal); //DEBUG
+						if(catOrder >= nblinestotal)
+						{
+							return 0;
+						}
+						
+						newprodCatOrder = catOrder +1;
+						var ajax_data2 =
+						{
+							newprodCatOrder,
+							idcat : 4,
+						};
+
+						var ajax_options2 = 
+						{
+							url: '/construire/value2',
+							method: 'GET',
+							data: ajax_data2,
+							success: function(data2)
+							{
+								//console.log(data2); //DEBUG
+								var path = data2;
+								$('#z2chest>img').remove();
+								$('#z2chest>figcaption').remove();
+								$('#z2chest').append(path);
+								var figcaption = '<figcaption>Bustes '+$('#z2chest>img').attr('id')+'</figcaption>';
+								$('#z2chest').append(figcaption);
+
+								var id2 = $('#z2chest>img').attr('id');
+								//console.log(id2); //DEBUG
+								var ajax_data3 =
+								{
+									idimage : id2,
+								};
+
+								var ajax_options3 = 
+								{
+									url: '/construire/description',
+									method: 'GET',
+									data: ajax_data3,
+									success: function(data3)
+									{
+										var list = data3;
+										$('#z3chest>ul').remove();
+										$('#z3chest').append(list);
+									}
+								}
+								$.ajax(ajax_options3);
+							}
+						}
+						$.ajax(ajax_options2);
+					}
+				}
+				$.ajax(ajax_options);
+			}
+		}
+		$.ajax(nb_lines_options);
+	});
+
+/*
+		Selection Ligne 4 :Quand je clique sur la div update des bustes :
+	*/
+	$('#btnUpdChest').on('click', function()
+	{
+		var id3 = $('#z2chest>img').attr('id');
+		//console.log(id3); //DEBUG
+		var currentimg = 
+		{
+			idimage: id3,
+		};
+
+		var currentimg_options = 
+		{
+			url: '/construire/selection',
+			method: 'GET',
+			data: currentimg,
+			success: function(img)
+			{
+				//console.log(img); //DEBUG
+				var selectedimg = img;
+				$('#z4chest>img').remove();
+				$('#z4chest').append(selectedimg);
+			}
+		}
+		$.ajax(currentimg_options);
+	});	
+
+/*
+	Previous Ligne 5 : Quand je clique sur la div previous des accessoires jambes :
+	*/
+
+	$('#prevAccLegs').on('click', function()
+	{
+		var id = $('#z2acclegs>img').attr('id');
+		//console.log(id); //DEBUG
+
+		var ajax_data =
+		{
+			idimage : id,
+		};
+
+		var ajax_options = 
+		{
+			url: '/construire/value1',
+			method :'GET',
+			data: ajax_data,
+			success: function(data)
+			{
+				catOrder = parseInt(data);
+
+				if(catOrder <= 1)
+				{
+					return 0;
+				}
+
+				newprodCatOrder = catOrder -1;
+				var ajax_data2 =
+				{
+					newprodCatOrder,
+					idcat : 5,
+				};
+
+				var ajax_options2 = 
+				{
+					url: '/construire/value2',
+					method: 'GET',
+					data: ajax_data2,
+					success: function(data2)
+					{
+						var path = data2;
+						$('#z2acclegs>img').remove();
+						$('#z2acclegs>figcaption').remove();
+						$('#z2acclegs').append(path);
+						var figcaption = '<figcaption>Accessoire de Jambes '+$('#z2acclegs>img').attr('id')+'</figcaption>';
+						$('#z2acclegs').append(figcaption);
+
+						var id2 = $('#z2acclegs>img').attr('id');
+						//console.log(id2); //DEBUG
+						var ajax_data3 =
+						{
+							idimage : id2,
+						};
+
+						var ajax_options3 = 
+						{
+							url: '/construire/description',
+							method: 'GET',
+							data: ajax_data3,
+							success: function(data3)
+							{
+								var list = data3;
+								$('#z3accLegs>ul').remove();
+								$('#z3accLegs').append(list);
+							}
+						}
+						$.ajax(ajax_options3);
+					}
+				}
+				$.ajax(ajax_options2);
+			}
+		}
+		$.ajax(ajax_options);
+	});
+
+/*
+		Next Ligne 5 :Quand je clique sur la div next des accessoires jambes:
+	*/
+
+	$('#nextAccLegs').on('click', function()
+	{
+		var nblinestotal=0;
+		var nb_lines =
+		{
+			idcat: 5,
+		};
+
+		var nb_lines_options =
+		{
+			url:'/construire/count',
+			method : 'GET',
+			data: nb_lines,
+			success: function(count)
+			{
+				//console.log(count); //DEBUG
+				nblinestotal = parseInt(count);
+
+				// afficher le détail des pièces plus le bouton ajouter et retirer
+				var id = $('#z2acclegs>img').attr('id');
+				//console.log(id); //DEBUG
+				var ajax_data =
+				{
+					idimage : id,
+				};
+
+				var ajax_options = 
+				{
+					url: '/construire/value1',
+					method :'GET',
+					data: ajax_data,
+					success: function(data)
+					{
+						catOrder = parseInt(data);
+						//console.log(catOrder); //DEBUG
+						//console.log(nblinestotal); //DEBUG
+						if(catOrder >= nblinestotal)
+						{
+							return 0;
+						}
+						
+						newprodCatOrder = catOrder +1;
+						var ajax_data2 =
+						{
+							newprodCatOrder,
+							idcat : 5,
+						};
+
+						var ajax_options2 = 
+						{
+							url: '/construire/value2',
+							method: 'GET',
+							data: ajax_data2,
+							success: function(data2)
+							{
+								//console.log(data2); //DEBUG
+								var path = data2;
+								$('#z2acclegs>img').remove();
+								$('#z2acclegs>figcaption').remove();
+								$('#z2acclegs').append(path);
+								var figcaption = '<figcaption>Accessoire de Jambes '+$('#z2acclegs>img').attr('id')+'</figcaption>';
+								$('#z2acclegs').append(figcaption);
+
+								var id2 = $('#z2acclegs>img').attr('id');
+								//console.log(id2); //DEBUG
+								var ajax_data3 =
+								{
+									idimage : id2,
+								};
+
+
+								var ajax_options3 = 
+								{
+									url: '/construire/description',
+									method: 'GET',
+									data: ajax_data3,
+									success: function(data3)
+									{
+										var list = data3;
+										$('#z3accLegs>ul').remove();
+										$('#z3accLegs').append(list);
+									}
+								}
+								$.ajax(ajax_options3);
+							}
+						}
+						$.ajax(ajax_options2);
+					}
+				}
+				$.ajax(ajax_options);
+			}
+		}
+		$.ajax(nb_lines_options);
+	});
+
+/*
+		Selection Ligne 5 :Quand je clique sur la div update des accessoires jambes :
+	*/
+	$('#btnUpdAccLegs').on('click', function()
+	{
+		var id3 = $('#z2acclegs>img').attr('id');
+		//console.log(id3); //DEBUG
+		var currentimg = 
+		{
+			idimage: id3,
+		};
+
+		var currentimg_options = 
+		{
+			url: '/construire/selection',
+			method: 'GET',
+			data: currentimg,
+			success: function(img)
+			{
+				//console.log(img); //DEBUG
+				var selectedimg = img;
+				$('#z4acclegs>img').remove();
+				$('#z4acclegs').append(selectedimg);
+			}
+		}
+		$.ajax(currentimg_options);
+	});
+
+/*
+	Previous Ligne 6 : Quand je clique sur la div previous des jambes :
+	*/
+	$('#prevLegs').on('click', function()
+	{
+		var id = $('#z2legs>img').attr('id');
+		//console.log(id); //DEBUG
+
+		var ajax_data =
+		{
+			idimage : id,
+		};
+
+		var ajax_options = 
+		{
+			url: '/construire/value1',
+			method :'GET',
+			data: ajax_data,
+			success: function(data)
+			{
+				catOrder = parseInt(data);
+
+				if(catOrder <= 1)
+				{
+					return 0;
+				}
+
+				newprodCatOrder = catOrder -1;
+				var ajax_data2 =
+				{
+					newprodCatOrder,
+					idcat : 6,
+				};
+
+				var ajax_options2 = 
+				{
+					url: '/construire/value2',
+					method: 'GET',
+					data: ajax_data2,
+					success: function(data2)
+					{
+						var path = data2;
+						$('#z2legs>img').remove();
+						$('#z2legs>figcaption').remove();
+						$('#z2legs').append(path);
+						var figcaption = '<figcaption>Jambes '+$('#z2legs>img').attr('id')+'</figcaption>'; $('#z2legs').append(figcaption);
+
+						var id2 = $('#z2legs>img').attr('id');
+						//console.log(id2); //DEBUG
+						var ajax_data3 =
+						{
+							idimage : id2,
+						};
+
+						var ajax_options3 = 
+						{
+							url: '/construire/description',
+							method: 'GET',
+							data: ajax_data3,
+							success: function(data3)
+							{
+								var list = data3;
+								$('#z3legs>ul').remove();
+								$('#z3legs').append(list);
+							}
+						}
+						$.ajax(ajax_options3);
+					}
+				}
+				$.ajax(ajax_options2);
+			}
+		}
+		$.ajax(ajax_options);
+	});
+
+/*
+		Next Ligne 6 :Quand je clique sur la div next des jambes:
+	*/
+
+	$('#nextLegs').on('click', function()
+	{
+		var nblinestotal=0;
+		var nb_lines =
+		{
+			idcat: 6,
+		};
+		var nb_lines_options =
+		{
+			url:'/construire/count',
+			method : 'GET',
+			data: nb_lines,
+			success: function(count)
+			{
+				//console.log(count); //DEBUG
+				nblinestotal = parseInt(count);
+
+				// afficher le détail des pièces plus le bouton ajouter et retirer
+				var id = $('#z2legs>img').attr('id');
+				//console.log(id); //DEBUG
+				var ajax_data =
+				{
+					idimage : id,
+				};
+
+				var ajax_options = 
+				{
+					url: '/construire/value1',
+					method :'GET',
+					data: ajax_data,
+					success: function(data)
+					{
+						catOrder = parseInt(data);
+						//console.log(catOrder); //DEBUG
+						//console.log(nblinestotal); //DEBUG
+						if(catOrder >= nblinestotal)
+						{
+							return 0;
+						}
+						
+						newprodCatOrder = catOrder +1;
+						var ajax_data2 =
+						{
+							newprodCatOrder,
+							idcat : 6,
+						};
+
+						var ajax_options2 = 
+						{
+							url: '/construire/value2',
+							method: 'GET',
+							data: ajax_data2,
+							success: function(data2)
+							{
+								//console.log(data2); //DEBUG
+								var path = data2;
+								$('#z2legs>img').remove();
+								$('#z2legs>figcaption').remove();
+								$('#z2legs').append(path);
+								var figcaption = '<figcaption>Jambes '+$('#z2legs>img').attr('id')+'</figcaption>';
+								$('#z2legs').append(figcaption);
+
+								var id2 = $('#z2legs>img').attr('id');
+								//console.log(id2); //DEBUG
+								var ajax_data3 =
+								{
+									idimage : id2,
+								};
+
+								var ajax_options3 = 
+								{
+									url: '/construire/description',
+									method: 'GET',
+									data: ajax_data3,
+									success: function(data3)
+									{
+										var list = data3;
+										$('#z3legs>ul').remove();
+										$('#z3legs').append(list);
+									}
+								}
+								$.ajax(ajax_options3);
+							}
+						}
+						$.ajax(ajax_options2);
+					}
+				}
+				$.ajax(ajax_options);
+			}
+		}
+		$.ajax(nb_lines_options);
+	});
+/*
+	Selection Ligne 6 :Quand je clique sur la div update des jambes :
+	*/
+	$('#btnUpdLegs').on('click', function()
+	{
+		var id3 = $('#z2legs>img').attr('id');
+		//console.log(id3); //DEBUG
+		var currentimg = 
+		{
+			idimage: id3,
+		};
+
+		var currentimg_options = 
+		{
+			url: '/construire/selection',
+			method: 'GET',
+			data: currentimg,
+			success: function(img)
+			{
+				//console.log(img); //DEBUG
+				var selectedimg = img;
+				$('#z4legs>img').remove();
+				$('#z4legs').append(selectedimg);
+			}
+		}
+		$.ajax(currentimg_options);
+	});
+
+});
