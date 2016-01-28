@@ -1,2 +1,0 @@
-Element d'entête du layout.php dans W>app>templates>
-<!-- <link rel="stylesheet" href="<?= $this->assetUrl('css/reset.css') ?>"> -->
