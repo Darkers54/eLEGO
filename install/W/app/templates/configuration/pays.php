@@ -1,0 +1,1 @@
+<?php foreach($countries as $country) : ?><option value="<?= $country['cygp_ID']; ?>"><?= $country['dvcyCountryName'] ?></option><?php endforeach; ?>
