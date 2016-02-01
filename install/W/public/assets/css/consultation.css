@@ -1,0 +1,287 @@
+body
+{
+	padding-top: 70px;
+	background-color: #FFF;
+	color:#000;
+	/*font-family: 'Ubuntu', sans-serif;*/
+	font-family: inherit;
+	font-weight: 500; 
+	font-size: 16px;
+	/*background-color: grey;*/
+	background-image: url("../img/interface/whitebric.jpg");
+
+	/*font-family: Times;
+	font-style: italic;
+	font-weight: 500;
+	line-height: 36px;
+	font-size: 18px;*/
+
+}
+.legofont
+{
+	font-family: 'Legothick';
+	text-transform: uppercase;
+}
+
+.container
+{
+	background-color: #CECECE;
+	padding: 0px;
+	margin-bottom: 10px;
+	/*width: 970px;*/
+
+
+}
+section>h2
+{
+	margin-left: 10px;
+	color: #303030;
+	font-size: 18px;
+	margin-bottom: 40px;
+}
+
+section>p
+{
+
+	text-align: center;
+	color: #303030;
+	font-size: 16px;
+	
+}
+
+footer>p
+{
+	text-align: center;
+	color: #303030;
+	margin-top: 60px;
+}
+
+/*.navbar
+{
+	height: 70px;
+	width:970px;
+	margin-left: auto;
+	margin-right: auto;
+}*/
+/*.nav.navbar-nav
+{
+	margin-bottom: 0px;
+}
+.navbar-brand img
+{
+	width: 50px;
+	height: 50px;
+}
+*/
+.logo
+{
+	
+	height: 80px;
+	/*border: 1px solid gray;*/
+	background-color: #1e5aa8;
+	margin:0px;
+}
+
+.logo h1
+{
+	float: left;
+	margin-top: 10px;
+	margin-left: 30px;
+	/*border: 1px solid gray;*/
+	font-size: 18px;
+	color: white;
+	vertical-align: center;	
+}
+
+.logo img
+{
+	float: left;
+	margin-left: 5px;
+	width: 100px;
+	height:100px;
+}
+
+.consultation header, .collection header
+{
+	margin-top: 10px;
+	margin-bottom: 20px; 
+}
+.consultation header h1, .collection h1
+{
+	color: #303030;
+	margin-left: 20px;
+	font-size: 25px;
+}
+
+.consultation header img, .collection header img
+{
+	width: 110px;
+	height: 110px;
+	border-radius: 50%;
+	border: 2px solid #303030;
+	margin-left: 20px;
+	margin-top: 10px
+}
+.consultation h2
+{
+	color: #303030;
+	font-size: 22px;
+	font-style: italic;
+	margin-left: 40px;
+	margin-top: 30px;
+	margin-bottom: 0px;
+
+}
+
+.consultation h3
+{
+	color: #1e5aa8;
+	font-size: 18px;
+	font-style: italic;
+	margin-left: 50px;
+	margin-top: 10px;
+	margin-bottom: 0px;
+
+}
+.consultation p, .collection p
+{
+	margin-left: 120px;
+	color: #1e5aa8;
+
+}
+.consultation a
+{
+	text-decoration: none;
+}
+.lastcreation
+{
+	width: 300px;
+	height: 500px;
+	position: relative;
+	margin-left: 300px;
+	margin-top: 30px;
+	margin-bottom: 90px;
+	/*border: 1px solid blue;*/
+}
+.lastcreation figure
+{
+	/*width: 192px;
+	height: 212px;
+	*/
+	float:left;
+	/*border: 1px solid grey;*/
+}
+.lastcreation img
+{
+	/*border: 1px solid grey;*/
+
+}
+
+.lastcreation .ac_head_created
+{
+	/*display: none;*/
+	position: absolute;
+	
+	/*pour casquette
+	left:50px;
+    top: 40px;
+	*/
+	left:10px;
+    top: 0px;
+   
+    z-index: 5;
+   
+}
+
+.lastcreation .ac_head_created>img
+{
+	/*display: none;*/
+	/*pour casquette
+	width: 172px;
+	height: 172px;
+	*/
+	
+	width: 242px;
+	height: 242px;
+	
+	/*
+	width: 192px;
+	height: 192px;
+	*/
+	
+	
+}
+
+.lastcreation .head_created
+{
+	position: absolute;
+    left: 30px;
+    top: 70px;
+    z-index: 4;
+   /* pour barbe
+   z-index: 3;*/
+
+}
+.lastcreation .ac_chest_created
+{
+	/*display: none;*/
+	position: absolute;
+	/* barbe
+	left: 30px;
+	top: 152px;
+	z-index: 4;
+	*/
+
+    left: 30px;
+    top: 152px;
+    z-index: 3;
+    
+    
+}
+.lastcreation .ac_chest_created>img
+{
+
+	/*display: none;*/
+	width: 192px;
+	height: 192px;
+	
+	/*
+	width: 212px;
+	height: 212px;
+	*/
+}
+.lastcreation .chest_created
+{
+	position: absolute;
+    left: 62px;
+    top: 180px;
+    z-index: 2;
+}
+.lastcreation .legs_created
+{
+	position: absolute;
+    left: 30px;
+    top: 269px;
+    z-index: 1;
+}
+.lastcreation figcaption
+{
+
+	position: absolute;
+    top: 500px;
+	color: #1e5aa8;
+	border-bottom: 2px solid #303030;
+	font-size: 16px;
+	font-style: italic;
+	margin-left: 15px;
+	margin-top: 10px;
+	margin-bottom: 0px;
+}
+
+.collection img
+{
+	width: 400px;
+	height: 250px;
+	border: 2px solid #303030;
+	border-radius: 20px;
+}

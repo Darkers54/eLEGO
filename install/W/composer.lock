@@ -4,13 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-<<<<<<< HEAD
-    "hash": "88c9ad9cea116c027a67c4d5783f1e6a",
+    "hash": "2b9e6999871d5e51ea3adf10053df6d0",
     "content-hash": "06289d87a03a458f349c10c8e983ea3b",
-=======
-    "hash": "2a089d84ad6df7ed14902854a30ded88",
-    "content-hash": "d866c866f2b58ebd512a1d9a3c3eb2b0",
->>>>>>> origin/eLEGO_DEV_MM
     "packages": [
         {
             "name": "altorouter/altorouter",

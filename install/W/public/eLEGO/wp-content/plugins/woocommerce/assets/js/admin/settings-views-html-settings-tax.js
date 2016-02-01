@@ -1,8 +1,8 @@
 /* global htmlSettingsTaxLocalizeScript, ajaxurl */
-
 /**
  * Used by woocommerce/includes/admin/settings/views/html-settings-tax.php
  */
+
 ( function( $, data, wp, ajaxurl ) {
 	$( function() {
 
@@ -39,9 +39,7 @@
 					var changes = this.changes || {};
 
 					_.each( changedRows, function( row, id ) {
-						changes[ id ] = _.extend( changes[ id ] || {
-							tax_rate_id : id
-						}, row );
+						changes[ id ] = _.extend( changes[ id ] || { tax_rate_id : id }, row );
 					} );
 
 					this.changes = changes;
@@ -97,9 +95,6 @@
 
 								WCTaxTableModelInstance.changes = {};
 								WCTaxTableModelInstance.trigger( 'saved:rates' );
-
-								// Reload view.
-								WCTaxTableInstance.render();
 							}
 
 							self.unblock();

@@ -10,4 +10,9 @@ class PrivateSpaceController extends Controller
 		{
 			$this->show('privatespace/privatespace');
 		}
+
+		public function consultation()
+		{
+			$this->show('privatespace/consultation');
+		}
 }	

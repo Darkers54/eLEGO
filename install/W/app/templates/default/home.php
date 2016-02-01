@@ -1,30 +1,30 @@
 <?php $this->layout('layout', ['title' => 'Accueil']) ?>
 <?php $this->start('main_content') ?>
 	<div id="home">
-		<div class="row">
+		<div class="row slogan">
 		<header>
-	            <img src="<?= $this->assetUrl('img/home/elego_logo_r.png'); ?>" alt="Logo de E-lego" />
-	            <h1>E-lego</h1>
-	            <h2 class="">Une seule limite, votre personnalité.</h2>
-				<h3 class="hidden-xs">Pour que la technique ne soit plus un frein à votre créativité !</h3>
+	            	<img src="<?= $this->assetUrl('img/home/elego_logo_b.png'); ?>" alt="Logo de E-lego" />
+		           	<h1>E-lego</h1>
+		            <h2 class="">Une seule limite, votre personnalité.</h2>
+					<h3 class="hidden-xs">Pour que la technique ne soit plus un frein à votre créativité !</h3>
 		</header>
 		</div>
-		<div class="row">
+		<div class="row bienvenue">
 		<article>
 		 	<h1>Bienvenue chez E-lego !</h1>
 		 	<h2>Vous créez, vous assemblez, nous livrons !</h2>
             <ul>
                 <li><a href="<?= $this->url('construire_construire'); ?>">Assemblez différentes pièces pour composer votre figurine personnalisée</a></li>
-                <li><a href="#">Stockez vos créations et montez vos collections dans un espace personnel</a></li>
-                <li><a href="#">Achetez vos productions</a></li>
+                <li><a href="http://localhost/eLEGO/mon-compte/">Stockez vos créations et montez vos collections dans un espace personnel</a></li>
+                <li><a href="http://localhost/eLEGO/boutique/">Achetez vos productions</a></li>
             </ul>
         </article>
         </div>
        
 		<div class="row" id="dessins">
 			<div class="assembler col-lg-3 col-md-3 col-sm-4 col-xs-12">
-				<figure class="head">
-					<img src="<?= $this->assetUrl('img/home/headicon.png'); ?>" alt="Tête de lego"/>
+				<figure class="headicon">
+					<img id= "test" src="<?= $this->assetUrl('img/home/headicon.png'); ?>" alt="Tête de lego"/>
 					<!--<figcaption>Tête de légo jaune souriante.</figcaption>-->
 				</figure>
 				<figure class="addicon">
@@ -65,7 +65,7 @@
 					<img src="<?= $this->assetUrl('img/home/legos3.png'); ?>" alt="Trois legos"/>
 					<!--<figcaption>Trois figurines lego semblables.</figcaption>-->
 				</figure>
-				<p><a href="#">Monter sa collection</a></p>
+				<p><a href="http://localhost/eLEGO/mon-compte/">Monter sa collection</a></p>
 
 			</div>
 
@@ -89,7 +89,7 @@
 					<img src="<?= $this->assetUrl('img/home/shoppingicon.png'); ?>" alt="caddie de course"/>
 					<!--<figcaption>Caddie de course.</figcaption>-->
 				</figure>
-				<p><a href="#">Acheter sa création</a></p>
+				<p><a href="http://localhost/eLEGO/boutique/">Acheter sa création</a></p>
 			</div>		
 		</div>
 	</div>	

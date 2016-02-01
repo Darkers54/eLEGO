@@ -1,10 +1,11 @@
 
-<?php $this->layout('layout', ['title' => 'Assemblez votre figurine']) ?>
+<?php $this->layout('layout', ['title' => 'Construire']) ?>
 
 <?php $this->start('main_content') ?>
 
-	<h2>Assemblez votre figurine</h2>
-	<p>Faites défiler les pièces et sélectionnez celles qui vous plaisent pour les ajouter à votre figurine. Une fois que vous avez fait votre choix, cliquez sur le bouton "valider la configuration".</p>
+	<h2>ASSEMBLEZ VOTRE FIGURINE</h2>
+	<p>Faites défiler les pièces et sélectionnez celles qui vous plaisent pour les ajouter à votre figurine.</p>
+	<p>Une fois que vous avez fait votre choix, cliquez sur le bouton "valider la configuration".</p>
 		
 
 	<!-- Choix accessoire tête -->
@@ -30,29 +31,31 @@
 
 		<!-- Zone 2 : Images accsessoires tête -->
 		<div class="liste acchead zone2 col-lg-3 col-md-6 col-sm-6 col-xs-12">
-			<!--touche previous-->
-			<div class="liste" id="prevAccHead">
-				<img src="<?= $this->assetUrl('img/interface/left.png'); ?>" alt="bouton précédent">
-			</div>
-			<!--Visuel de chaque image-->
-			<?php 
-				foreach ($z2acchead as $currentAccHead) :
-					$id .= $currentAccHead['ID_prod'];
-			?>
-				<figure class="ac_head liste" id="z2acchead">
-					<img id="<?= $id; ?>" src="<?= $this->assetUrl('/img/products/'.$currentAccHead['pdctName'].'/'.$currentAccHead['prodUrl'])?>" alt="<?= $currentAccHead['prodDesc']?>">
-				<figcaption>Accessoire de tête <?= $id;?></figcaption>
-				</figure>
-				<figure class="z4acchead hidden-lg hidden-md hidden-sm visible-xs">
+			<div class="zone2all">
+				<!--touche previous-->
+				<div class="liste" id="prevAccHead">
+					<img src="<?= $this->assetUrl('img/interface/left.png'); ?>" alt="bouton précédent">
+				</div>
+				<!--Visuel de chaque image-->
+				<?php 
+					foreach ($z2acchead as $currentAccHead) :
+						$id .= $currentAccHead['ID_prod'];
+				?>
+					<figure class="ac_head liste" id="z2acchead">
+						<img id="<?= $id; ?>" src="<?= $this->assetUrl('/img/products/'.$currentAccHead['pdctName'].'/'.$currentAccHead['prodUrl'])?>" alt="<?= $currentAccHead['prodDesc']?>">
+					<figcaption>Accessoire de tête N°<?= $id;?></figcaption>
+					</figure>
+					<figure class="z4acchead hidden-lg hidden-md hidden-sm visible-xs">
 
-					<figcaption class="hidden-lg hidden-md hidden-sm visible-xs">Pièce actuellement sélectionnée</figcaption>
-				</figure>
-			<?php endforeach; ?>
+						<figcaption class="hidden-lg hidden-md hidden-sm visible-xs">Pièce actuellement sélectionnée</figcaption>
+					</figure>
+				<?php endforeach; ?>
 
-			<!--touche next-->
-			<div class="liste" id="nextAccHead">
-				<img src="<?= $this->assetUrl('img/interface/right.png'); ?>" alt="bouton suivant">
-			</div>
+				<!--touche next-->
+				<div class="liste" id="nextAccHead">
+					<img src="<?= $this->assetUrl('img/interface/right.png'); ?>" alt="bouton suivant">
+				</div>
+			</div>	
 		</div>
 
 		<!-- Zone 3 : Visuel des détails de la pièce, ajout en sélection, retrait de la sélection -->
@@ -109,30 +112,32 @@
 
 		<!--Zone 2 : Image tête -->
 		<div class="liste heads zone2 col-lg-3 col-md-6 col-sm-6 col-xs-12">
-			<!--touche previous-->
-			<div class="liste" id="prevHead">
-				<img src="<?= $this->assetUrl('img/interface/left.png'); ?>" alt="bouton précédent">
-			</div>
+			<div class="zone2all">
+				<!--touche previous-->
+				<div class="liste" id="prevHead">
+					<img src="<?= $this->assetUrl('img/interface/left.png'); ?>" alt="bouton précédent">
+				</div>
 
-			<!--Visuel de chaque image-->
-			<?php 
-				foreach ($z2head as $currentHead) :
-					$id .= $currentHead['ID_prod'];
-			?>
-				<figure class="head liste" id="z2head">
-					<img id="<?= $id; ?>" src="<?= $this->assetUrl('/img/products/'.$currentHead['pdctName'].'/'.$currentHead['prodUrl'])?>" alt="<?= $currentHead['prodDesc']?>">
-					<figcaption>Tête <?= $id;?></figcaption>
-				</figure>
-				<figure class="z4head hidden-lg hidden-md hidden-sm visible-xs">
+				<!--Visuel de chaque image-->
+				<?php 
+					foreach ($z2head as $currentHead) :
+						$id .= $currentHead['ID_prod'];
+				?>
+					<figure class="head liste" id="z2head">
+						<img id="<?= $id; ?>" src="<?= $this->assetUrl('/img/products/'.$currentHead['pdctName'].'/'.$currentHead['prodUrl'])?>" alt="<?= $currentHead['prodDesc']?>">
+						<figcaption>Tête <?= $id;?></figcaption>
+					</figure>
+					<figure class="z4head hidden-lg hidden-md hidden-sm visible-xs">
 
-					<figcaption class="hidden-lg hidden-md hidden-sm visible-xs">Pièce actuellement sélectionnée</figcaption>
-				</figure>
-			<?php endforeach; ?>
+						<figcaption class="hidden-lg hidden-md hidden-sm visible-xs">Pièce actuellement sélectionnée</figcaption>
+					</figure>
+				<?php endforeach; ?>
 
-			<!--touche next-->
-			<div class="liste" id="nextHead">
-				<img src="<?= $this->assetUrl('img/interface/right.png'); ?>" alt="bouton suivant">
-			</div>
+				<!--touche next-->
+				<div class="liste" id="nextHead">
+					<img src="<?= $this->assetUrl('img/interface/right.png'); ?>" alt="bouton suivant">
+				</div>
+			</div>	
 		</div>
 
 		<!-- Zone 3 : Visuel des détails de la pièce, ajout en sélection, retrait de la sélection -->
@@ -187,29 +192,31 @@
 
 		<!-- Zone 2 : Image accessoire buste -->
 		<div class="liste accchest zone2 col-lg-3 col-md-6 col-sm-6 col-xs-12">
-			<!--touche previous-->
-			<div class="liste" id="prevAccChest">
-				<img src="<?= $this->assetUrl('img/interface/left.png'); ?>" alt="bouton précédent">
-			</div>
-			<!--Visuel de chaque image-->
-			<?php 
-				foreach ($z2accchest as $currentAccChest) :
-					$id .= $currentAccChest['ID_prod'];
-			?>
-				<figure class="ac_chest liste" id="z2accchest">
-					<img id="<?= $id; ?>" src="<?= $this->assetUrl('/img/products/'.$currentAccChest['pdctName'].'/'.$currentAccChest['prodUrl'])?>" alt="<?= $currentAccChest['prodDesc']?>">
-					<figcaption>Accessoire de buste <?= $id;?></figcaption>
-				</figure>
-				<figure class="z4accchest hidden-lg hidden-md hidden-sm visible-xs">
+			<div class="zone2all">
+				<!--touche previous-->
+				<div class="liste" id="prevAccChest">
+					<img src="<?= $this->assetUrl('img/interface/left.png'); ?>" alt="bouton précédent">
+				</div>
+				<!--Visuel de chaque image-->
+				<?php 
+					foreach ($z2accchest as $currentAccChest) :
+						$id .= $currentAccChest['ID_prod'];
+				?>
+					<figure class="ac_chest liste" id="z2accchest">
+						<img id="<?= $id; ?>" src="<?= $this->assetUrl('/img/products/'.$currentAccChest['pdctName'].'/'.$currentAccChest['prodUrl'])?>" alt="<?= $currentAccChest['prodDesc']?>">
+						<figcaption>Accessoire de buste <?= $id;?></figcaption>
+					</figure>
+					<figure class="z4accchest hidden-lg hidden-md hidden-sm visible-xs">
 
-					<figcaption class="hidden-lg hidden-md hidden-sm visible-xs">Pièce actuellement sélectionnée</figcaption>
-				</figure>				
-			<?php endforeach; ?>
+						<figcaption class="hidden-lg hidden-md hidden-sm visible-xs">Pièce actuellement sélectionnée</figcaption>
+					</figure>				
+				<?php endforeach; ?>
 
-			<!--touche next-->
-			<div class="liste" id="nextAccChest">
-				<img src="<?= $this->assetUrl('img/interface/right.png'); ?>" alt="bouton suivant">
-			</div>
+				<!--touche next-->
+				<div class="liste" id="nextAccChest">
+					<img src="<?= $this->assetUrl('img/interface/right.png'); ?>" alt="bouton suivant">
+				</div>
+			</div>	
 		</div>
 
 		<!-- Zone 3 : Visuel des détails de la pièce, ajout en sélection, retrait de la sélection -->
@@ -264,29 +271,32 @@
 
 		<!-- Image buste -->
 		<div class="liste chests zone2 col-lg-3 col-md-6 col-sm-6 col-xs-12">
-			<!--touche previous-->
-			<div class="liste" id="prevChest">
-				<img src="<?= $this->assetUrl('img/interface/left.png'); ?>" alt="bouton précédent">
-			</div>
-			<!--Visuel de chaque image-->
-			<?php 
-				foreach ($z2chest as $currentChest) :
-					$id .= $currentChest['ID_prod'];
-			?>
-				<figure class="chest liste" id="z2chest">
-					<img id="<?= $id; ?>" src="<?= $this->assetUrl('/img/products/'.$currentChest['pdctName'].'/'.$currentChest['prodUrl'])?>" alt="<?= $currentChest['prodDesc']?>">
-					<figcaption>Buste <?= $id;?></figcaption>
-				</figure>
-				<figure class="z4chest hidden-lg hidden-md hidden-sm visible-xs">
+			
+			<div class="zone2all">
+				<!--touche previous-->
+				<div class="liste" id="prevChest">
+					<img src="<?= $this->assetUrl('img/interface/left.png'); ?>" alt="bouton précédent">
+				</div>
+				<!--Visuel de chaque image-->
+				<?php 
+					foreach ($z2chest as $currentChest) :
+						$id .= $currentChest['ID_prod'];
+				?>
+					<figure class="chest liste" id="z2chest">
+						<img id="<?= $id; ?>" src="<?= $this->assetUrl('/img/products/'.$currentChest['pdctName'].'/'.$currentChest['prodUrl'])?>" alt="<?= $currentChest['prodDesc']?>">
+						<figcaption>Buste <?= $id;?></figcaption>
+					</figure>
+					<figure class="z4chest hidden-lg hidden-md hidden-sm visible-xs">
 
-					<figcaption class="hidden-lg hidden-md hidden-sm visible-xs">Pièce actuellement sélectionnée</figcaption>
-				</figure>				
-			<?php endforeach; ?>
+						<figcaption class="hidden-lg hidden-md hidden-sm visible-xs">Pièce actuellement sélectionnée</figcaption>
+					</figure>				
+				<?php endforeach; ?>
 
-			<!--touche next-->
-			<div class="liste" id="nextChest">
-				<img src="<?= $this->assetUrl('img/interface/right.png'); ?>" alt="bouton suivant">
-			</div>
+				<!--touche next-->
+				<div class="liste" id="nextChest">
+					<img src="<?= $this->assetUrl('img/interface/right.png'); ?>" alt="bouton suivant">
+				</div>
+			</div>	
 		</div>
 
 		<!-- Zone 3 : Visuel des détails de la pièce, ajout en sélection, retrait de la sélection -->
@@ -340,29 +350,31 @@
 
 		<!-- Zone 2 : Image accessoire jambes -->
 		<div class="liste acclegs zone2 col-lg-3 col-md-6 col-sm-6 col-xs-12">
-			<!--touche previous-->
-			<div class="liste" id="prevAccLegs">
-				<img src="<?= $this->assetUrl('img/interface/left.png'); ?>" alt="bouton précédent">
-			</div>
-			<!--Visuel de chaque image-->
-			<?php 
-				foreach ($z2acclegs as $currentAccLegs) :
-					$id .= $currentAccLegs['ID_prod'];
-			?>
-				<figure class="ac_legs liste" id="z2acclegs">
-					<img id="<?= $id; ?>" src="<?= $this->assetUrl('/img/products/'.$currentAccLegs['pdctName'].'/'.$currentAccLegs['prodUrl'])?>" alt="<?= $currentAccLegs['prodDesc']?>">
-					<figcaption>Accessoire Jambes <?= $id;?></figcaption>
-				</figure>
-				<figure class="z4acclegs hidden-lg hidden-md hidden-sm visible-xs">
+			<div class="zone2all">
+				<!--touche previous-->
+				<div class="liste" id="prevAccLegs">
+					<img src="<?= $this->assetUrl('img/interface/left.png'); ?>" alt="bouton précédent">
+				</div>
+				<!--Visuel de chaque image-->
+				<?php 
+					foreach ($z2acclegs as $currentAccLegs) :
+						$id .= $currentAccLegs['ID_prod'];
+				?>
+					<figure class="ac_legs liste" id="z2acclegs">
+						<img id="<?= $id; ?>" src="<?= $this->assetUrl('/img/products/'.$currentAccLegs['pdctName'].'/'.$currentAccLegs['prodUrl'])?>" alt="<?= $currentAccLegs['prodDesc']?>">
+						<figcaption>Accessoire Jambes <?= $id;?></figcaption>
+					</figure>
+					<figure class="z4acclegs hidden-lg hidden-md hidden-sm visible-xs">
 
-					<figcaption class="hidden-lg hidden-md hidden-sm visible-xs">Pièce actuellement sélectionnée</figcaption>
-				</figure>				
-			<?php endforeach; ?>
+						<figcaption class="hidden-lg hidden-md hidden-sm visible-xs">Pièce actuellement sélectionnée</figcaption>
+					</figure>				
+				<?php endforeach; ?>
 
-			<!--touche next-->
-			<div class="liste" id="nextAccLegs">
-				<img src="<?= $this->assetUrl('img/interface/right.png'); ?>" alt="bouton suivant">
-			</div>
+				<!--touche next-->
+				<div class="liste" id="nextAccLegs">
+					<img src="<?= $this->assetUrl('img/interface/right.png'); ?>" alt="bouton suivant">
+				</div>
+			</div>	
 		</div>
 
 		<!-- Zone 3 : Visuel des détails de la pièce, ajout en sélection, retrait de la sélection -->
@@ -416,29 +428,30 @@
 
 		<!-- Zone 2 : Image Jambes -->
 		<div class="liste legs zone2 col-lg-3 col-md-6 col-sm-6 col-xs-12">
-			<!--touche previous-->
-			<div class="liste" id="prevLegs">
-				<img src="<?= $this->assetUrl('img/interface/left.png'); ?>" alt="bouton précédent">
-			</div>
-			<!--Visuel de chaque image-->
-			<?php 
-				foreach ($z2legs as $currentLegs) :
-					$id .= $currentLegs['ID_prod'];
-			?>
-				<figure class="legs liste" id="z2legs">
-					<img id="<?= $id; ?>" src="<?= $this->assetUrl('/img/products/'.$currentLegs['pdctName'].'/'.$currentLegs['prodUrl'])?>" alt="<?= $currentLegs['prodDesc']?>">
-					<figcaption>Jambes <?= $id;?></figcaption>
-				</figure>
-				<figure class="z4legs hidden-lg hidden-md hidden-sm visible-xs">
+			<div class="zone2all">
+				<!--touche previous-->
+				<div class="liste" id="prevLegs">
+					<img src="<?= $this->assetUrl('img/interface/left.png'); ?>" alt="bouton précédent">
+				</div>
+				<!--Visuel de chaque image-->
+				<?php 
+					foreach ($z2legs as $currentLegs) :
+						$id .= $currentLegs['ID_prod'];
+				?>
+					<figure class="legs liste" id="z2legs">
+						<img id="<?= $id; ?>" src="<?= $this->assetUrl('/img/products/'.$currentLegs['pdctName'].'/'.$currentLegs['prodUrl'])?>" alt="<?= $currentLegs['prodDesc']?>">
+						<figcaption>Jambes <?= $id;?></figcaption>
+					</figure>
+					<figure class="z4legs hidden-lg hidden-md hidden-sm visible-xs">
+						<figcaption class="hidden-lg hidden-md hidden-sm visible-xs">Pièce actuellement sélectionnée</figcaption>
+					</figure>				
+				<?php endforeach; ?>
 
-					<figcaption class="hidden-lg hidden-md hidden-sm visible-xs">Pièce actuellement sélectionnée</figcaption>
-				</figure>				
-			<?php endforeach; ?>
-
-			<!--touche next-->
-			<div class="liste" id="nextLegs">
-				<img src="<?= $this->assetUrl('img/interface/right.png'); ?>" alt="bouton suivant">
-			</div>
+				<!--touche next-->
+				<div class="liste" id="nextLegs">
+					<img src="<?= $this->assetUrl('img/interface/right.png'); ?>" alt="bouton suivant">
+				</div>
+			</div>	
 		</div>
 
 		<!-- Zone 3 : Visuel des détails de la pièce, ajout en sélection, retrait de la sélection -->

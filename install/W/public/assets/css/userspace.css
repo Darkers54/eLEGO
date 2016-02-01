@@ -1,1 +1,171 @@
-/* navbar */
+body
+{
+	padding-top: 70px;
+	background-color: #FFF;
+	color:#000;
+	/*font-family: 'Ubuntu', sans-serif;*/
+	font-family: inherit;
+	font-weight: 500; 
+	font-size: 16px;
+	/*background-color: grey;*/
+	background-image: url("../img/interface/671619.jpg");
+
+	/*font-family: Times;
+	font-style: italic;
+	font-weight: 500;
+	line-height: 36px;
+	font-size: 18px;*/
+
+}
+
+.container
+{
+	background-color: #303030;
+	padding: 0px;
+	margin-bottom: 10px;
+	/*width: 970px;*/
+
+
+}
+section>h2
+{
+	margin-left: 10px;
+	color: #CECECE;
+	font-size: 18px;
+	margin-bottom: 40px;
+}
+
+section>p
+{
+
+	text-align: center;
+	color: #CECECE;
+	font-size: 16px;
+	
+}
+
+footer>p
+{
+	text-align: center;
+	color: #CECECE;
+}
+
+.navbar
+{
+	/*height: 70px;*/
+	/*width:970px;*/
+	margin-left: auto;
+	margin-right: auto;
+}
+.nav.navbar-nav
+{
+	margin-bottom: 0px;
+}
+.navbar-brand img
+{
+	width: 30px;
+	height: 30px;
+	margin-bottom: auto;
+	margin-top: auto;
+}
+
+.logo
+{
+	
+	height: 80px;
+	/*border: 1px solid gray;*/
+	background-color: #1e5aa8;
+	margin:0px;
+}
+
+.logo h1
+{
+	float: left;
+	margin-top: 10px;
+	margin-left: 30px;
+	/*border: 1px solid gray;*/
+	font-size: 18px;
+	color: white;
+	vertical-align: center;	
+}
+
+.logo img
+{
+	float: left;
+	margin-left: 5px;
+	width: 100px;
+	height:100px;
+}
+
+.privatespace header
+{
+	border: 2px solid #CECECE;
+	margin-top: 0px;
+	margin-bottom: 20px; 
+}
+.privatespace header h1
+{
+	color: #CECECE;
+	margin-left: 20px;
+	font-size: 25px;
+}
+
+.privatespace header img
+{
+	width: 110px;
+	height: 110px;
+	border-radius: 50%;
+	border: 2px solid #CECECE;
+	margin-left: 20px;
+	margin-top: 10px;
+}
+.privatespace h2
+{
+	color: #EFD807;
+	font-size: 20px;
+	font-style: italic;
+	margin-left: 40px;
+	margin-top: 30px;
+	margin-bottom: 0px;
+
+}
+.partage
+{
+	margin: 20px 40px;
+	border-radius: 20px;
+	border: 1px solid #CECECE;
+}
+
+.partage figure
+{
+	/*width: 504px;*/
+	height: 304px;
+	/*border: 2px solid #CECECE;*/
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 20px;
+	margin-bottom: 10px;
+}
+
+.partage img
+{
+	margin-left: auto;
+	margin-right: auto;
+	/*width: 500px;*/
+	height: 300px;
+}
+.partage figcaption
+{
+	color: #CECECE;
+	font-size: 16px;
+	font-style: italic;
+	text-align: center;
+	margin-left: auto;
+	margin-right: auto;
+	/*width: 504px;*/
+	height: 40px;
+	margin-top: 20px;
+	margin-bottom: 10px;
+}
+
+

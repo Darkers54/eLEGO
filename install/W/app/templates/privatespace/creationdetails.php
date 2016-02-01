@@ -1,4 +1,4 @@
-<?php $this->layout('privatespace_layout', ['title' => 'Espace personnel/collection/details']) ?>
+<?php $this->layout('consultation_layout', ['title' => 'Espace personnel > Consultation > Ma collection > Details']) ?>
 <?php $this->start('main_content') ?>
 	<h1> Détails de votre création </h1>
 

@@ -134,7 +134,11 @@ class WC_Shortcode_My_Account {
 	 * @param string $load_address
 	 */
 	private static function edit_address( $load_address = 'billing' ) {
-		$current_user = wp_get_current_user();
+
+		// Current user
+		global $current_user;
+		get_currentuserinfo();
+
 		$load_address = sanitize_key( $load_address );
 
 		$address = WC()->countries->get_address_fields( get_user_meta( get_current_user_id(), $load_address . '_country', true ), $load_address . '_' );

@@ -42,15 +42,27 @@ class TbclientsController extends \W\Controller\Controller
 				{
 					$tbclientsManager = new \Manager\TbclientsManager();
 					$exists = $tbclientsManager->insertContact($fname, $lname, $mail, $firm, $mobject, $message);
-					if($exists == true) {
+					if($exists == true) 
+					{
+						//mail au client 
 						$return = '<p>nous avons bien reçu votre nouveau message. Votre nouvelle demande sera traitée dans les plus brefs délais.</p>
 							<br><p>Ceci est un email automatique, merci de ne pas y répondre.</p>';
 							$this->contactEmail($mail,$fname,$lname,$mobject,$return);
+						//mail au SAV
+						$return1 = '<p>Notre client(e)'.' '.$fname.'.'.$lname.', dont l\'email est '.$mail.' vient d\'effectuer une nouvelle demande: '
+									.$subject.'</p><br><p>'.$message.'</p><br><p>Pourriez vous traiter sa nouvelle demande ?</p><br><p> Merci d\'avance. Le SAV d\'eLEGO.</p>';
+							$this->savContactEmail($mail,$fname,$lname,$mobject,$message,$return1);	
 					}
-					elseif($exists == false) {
+					elseif($exists == false) 
+					{
+						//mail au client
 						$return = '<p>nous avons bien reçu votre message. Votre demande sera traitée dans les plus brefs délais.</p>
 							<br><p>Ceci est un email automatique, merci de ne pas y répondre.</p>';
 							$this->contactEmail($mail,$fname,$lname,$mobject,$return);
+						//mail au SAV
+						$return1 = '<p>Notre client(e)'.' '.$fname.'.'.$lname.', dont l\'email est '.$mail.' vient d\'effectuer une demande: '
+									.$subject.'</p><br><p>'.$message.'</p><br><p>Pourriez vous traiter sa demande ?</p><br><p> Merci d\'avance. Le SAV d\'eLEGO.</p>';
+							$this->savContactEmail($mail,$fname,$lname,$mobject,$message,$return1);	
 					}
 				}
 		
@@ -58,41 +70,24 @@ class TbclientsController extends \W\Controller\Controller
 			}
 		
 		}
-		public function CleanUpBeforeSend($var)
-		{
-			$trimvar = trim($var);
-			$striptagsvar = strip_tags($trimvar);
-			$htmlspecharvar = htmlspecialchars($striptagsvar);
-			$Filteredvar = filter_var($htmlspecharvar, FILTER_SANITIZE_STRING);
-			return $Filteredvar;
-		}
-
+		//confirmation client
 		public function contactEmail($address,$fname,$lname,$subject,$return)
 		{
 			$mail= new \PHPMailer();
 
-			$mail->isSMTP();                                      // Set mailer to use SMTP
-			$mail->Host = 'smtp.gmail.com';  						// Specify main and backup SMTP servers
-			$mail->SMTPAuth = true;                               // Enable SMTP authentication
-			$mail->Username = 'elego2016@gmail.com';                 // SMTP username
-			$mail->Password = '20elego16';                           // SMTP password
-			$mail->SMTPSecure = 'tls';                            // Enable TLS encryption, `ssl` also accepted
-			$mail->Port = 587;                                    // TCP port to connect to
+			$mail->isSMTP();                                      
+			$mail->Host = 'smtp.gmail.com';  						
+			$mail->SMTPAuth = true;                               
+			$mail->Username = 'elego2016@gmail.com';                 
+			$mail->Password = '20elego16';                           
+			$mail->SMTPSecure = 'tls';                            
+			$mail->Port = 587;                                    
 
 			$mail->setFrom('elego2016@gmail.com', 'eLEGO');
-			$mail->addAddress($address, $fname.'.'.$lname);     // Add a recipient
-			//$mail->addAddress('ellen@example.com');               // Name is optional
-			//$mail->addReplyTo('info@example.com', 'Information');
-			//$mail->addCC('cc@example.com');
-			//$mail->addBCC('bcc@example.com');
-
-			//$mail->addAttachment('/var/tmp/file.tar.gz');         // Add attachments
-			//$mail->addAttachment('/tmp/image.jpg', 'new.jpg');    // Optional name
-			$mail->isHTML(true);                                  // Set email format to HTML
-
+			$mail->addAddress($address, $fname.'.'.$lname);
+			$mail->isHTML(true);  //configuration html    
 			$mail->Subject = $subject ;
 			$mail->Body    = $return ;
-			//$mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
 
 			if(!$mail->send())
 			{
@@ -104,6 +99,35 @@ class TbclientsController extends \W\Controller\Controller
     			echo 'Le message vient d\'être envoyé';
 			}
 		}
+		//contact sav
+		public function savContactEmail($address,$fname,$lname,$subject,$message,$return1)
+		{
+			$mail= new \PHPMailer();
 
+			$mail->isSMTP();                                      
+			$mail->Host = 'smtp.gmail.com';  						
+			$mail->SMTPAuth = true;                               
+			$mail->Username = 'elego2016@gmail.com';                 
+			$mail->Password = '20elego16';                           
+			$mail->SMTPSecure = 'tls';                            
+			$mail->Port = 587;                                    
+
+			$mail->setFrom('elego2016@gmail.com', 'eLEGO');
+			$mail->addAddress('savelego2016@gmail.com');
+			$mail->isHTML(true);    //configuration html  
+			$mail->Subject = 'Nouveau ticket pour'.' '. $fname.'.'.$lname ;
+			$mail->Body    = $return1 ;
+			
+
+			if(!$mail->send())
+			{
+    			echo 'Le mail n\'a pas pu être envoyé.';
+    			echo 'Mailer Error: ' . $mail->ErrorInfo;
+			} 
+			else
+			{
+    			echo 'Le message vient d\'être envoyé';
+			}
+		}
 }
 

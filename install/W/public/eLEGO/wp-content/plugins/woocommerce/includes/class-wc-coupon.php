@@ -366,7 +366,11 @@ class WC_Coupon {
 		}
 		if ( $this->usage_limit_per_user > 0 && is_user_logged_in() && $this->id ) {
 			global $wpdb;
-			$usage_count = $wpdb->get_var( $wpdb->prepare( "SELECT COUNT( meta_id ) FROM {$wpdb->postmeta} WHERE post_id = %d AND meta_key = '_used_by' AND meta_value = %d;", $this->id, $user_id ) );
+			$wpdb->get_var( $wpdb->prepare( "SELECT COUNT( `meta_id` )
+											 FROM   {$wpdb->postmeta}
+											 WHERE  `post_id`    = %d
+											   AND  `meta_key`   = '_used_by'
+											   AND  `meta_value` = %d", $this->id, $user_id ) );
 
 			if ( $usage_count >= $this->usage_limit_per_user ) {
 				throw new Exception( self::E_WC_COUPON_USAGE_LIMIT_REACHED );

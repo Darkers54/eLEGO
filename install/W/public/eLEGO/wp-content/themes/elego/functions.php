@@ -14,18 +14,33 @@ function theme_enqueue_styles() {
 
 // Logout Redirect
 
-function sebb_logout_redirect()
+function elego_logout_redirect()
 {
-wp_redirect(home_url());
-exit;
+	wp_redirect(home_url());
+	exit;
 }
 
-add_action('wp_logout', 'sebb_logout_redirect');
+function elego_login($user_login, $user) {
+	$_SESSION['user'] = [
+		'id' 			=> $user->data->ID,
+		'display_name' 	=> $user->data->display_name,
+		'email' 		=> $user->data->user_email,
+	];
+}
+function elego_logout() {
+	unset($_SESSION['user']);
+}
 
+function elego_session_start() {
+	if(!session_id()) {
+		session_start();
+	}
+}
 
-
-
-
+add_action('wp_logout', 	'elego_logout_redirect');
+add_action('init', 			'elego_session_start');
+add_action('wp_login', 		'elego_login', 10, 2);
+add_action('wp_logout', 	'elego_logout');
 //
 // Your code goes below
 //

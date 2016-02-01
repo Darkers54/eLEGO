@@ -10,7 +10,8 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
 	<!-- Our Own StyleSheet ;) -->
 	<link rel="stylesheet" href="<?= $this->assetUrl('css/styles.css') ?>">
-	
+	<!--google fonts-->
+	<link href='https://fonts.googleapis.com/css?family=Ubuntu:400,500,700,500italic' rel='stylesheet' type='text/css'>
 	<!-- Ajax javascript jQuery Library-->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 	<!-- Google API -->
@@ -22,6 +23,11 @@
 	<script src="<?= $this->assetUrl('js/configuration.js') ?>" type="text/javascript" charset="utf-8" defer></script>
 
 	<script src="<?= $this->assetUrl('js/map.js') ?>" type="text/javascript" charset="utf-8" async defer></script>
+	<!-- Appel accordion jquery -->
+	<script src="//code.jquery.com/jquery-1.10.2.js"></script>
+  	<script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+	<script>$(function() {$( "#accordion" ).accordion();});</script>
+	<!-- Fin appel accordion jquery -->
 </head>
 <body>
 	<div class="container">
@@ -49,16 +55,18 @@
 		        			<li><a href="http://localhost/eLEGO/boutique/">Boutique</a></li>
 		        			<li><a href="<?= $this->url('default_inscription'); ?>">Inscription</a></li>
 							<li><a href="http://localhost/eLEGO/mon-compte/">Connexion</a></li>
-							<li><a href="<?= $this->url('privatespace_privatespace'); ?>">Espace personnel</a></li>
-		        			<li><a href="<?= $this->url('default_help'); ?>">Aide</a></li>
+							
+		        			<li><a href="<?= $this->url('default_help'); ?>">F.A.Q</a></li>
+		        			<li><a href="http://localhost/eLEGO/mon-compte/sav/?v=dfae57c24604">SAV</a></li>
+		        			<li><a href="<?= $this->url('admin_home'); ?>">Administration</a></li>
 		      			</ul>
 		    		</div><!-- /.navbar-collapse -->
 		  		</div><!-- /.container-fluid -->
 			</nav>
-			<h1>W :: <?= $this->e($title) ?></h1>
+			
 		</header>
 		<div class="logo">
-			<img src="<?= $this->assetUrl('img/truc.jpg'); ?>" alt="imagelego">
+			<h1><?= $this->e($title) ?></h1>
 		</div>
 		<section>
 

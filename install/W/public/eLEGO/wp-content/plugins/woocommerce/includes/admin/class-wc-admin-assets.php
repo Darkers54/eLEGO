@@ -77,7 +77,9 @@ class WC_Admin_Assets {
 	 * Enqueue scripts.
 	 */
 	public function admin_scripts() {
-		global $wp_query, $post;
+		global $wp_query, $post, $current_user;
+
+		get_currentuserinfo();
 
 		$screen       = get_current_screen();
 		$wc_screen_id = sanitize_title( __( 'WooCommerce', 'woocommerce' ) );

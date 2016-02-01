@@ -9,8 +9,6 @@
 	<!-- Optional theme -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
 	<!-- Our Own StyleSheet ;) -->
-	<link rel="stylesheet" href="<?= $this->assetUrl('css/styles.css') ?>">
-	<link rel="stylesheet" href="<?= $this->assetUrl('css/home.css') ?>">
 	<link rel="stylesheet" href="<?= $this->assetUrl('css/userspace.css') ?>">
 	<!-- Ajax javascript-->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
@@ -21,9 +19,9 @@
 	
 </head>
 <body>
-	<div class="containerlayoutus">
+	<div class="container">
 		<header>
-			<nav class="navbar navbar-default navbar-fixed-top">
+			<nav class="navbar navbar-inverse navbar-fixed-top">
 		  		<div class="container-fluid">
 		    		<!-- Brand and toggle get grouped for better mobile display -->
 		    		<div class="navbar-header">
@@ -33,23 +31,26 @@
 		    		    <span class="icon-bar"></span>
 		   	 		    <span class="icon-bar"></span>
 		   		    </button>
-		      		<a class="navbar-brand" href="#">e<span class="legofont">lego</span></a>
+		      		<a class="navbar-brand" href="<?= $this->url('home'); ?>"><img src="<?= $this->assetUrl('img/logo/elego_logo_b.png'); ?>" alt="logo"></span></a>
 		    		</div>
 
 		    		<!-- Collect the nav links, forms, and other content for toggling -->
 		    		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 		      			<ul class="nav navbar-nav">
 		        			<li><a href="<?= $this->url('home'); ?>">Accueil<span class="sr-only">(current)</span></a></li>
-		        			<li><a href="#">Gestion de profil</a></li>
-		        			<li><a href="<?= $this->url('privatespace_collection'); ?>">Collection</a></li>
-		        			<li><a href="#">SAV</a></li>
-		        			<li><a href="#">Forum</a></li>
+		        			<li><a href="<?= $this->url('privatespace_privatespace'); ?>">Espace personnel</a></li>
+		        			<li><a href="http://localhost/eLEGO/mon-compte/">Gestion de profil</a></li>
+		        			<li><a href="<?= $this->url('privatespace_consultation'); ?>">Consultation</a></li>
+		        			<li><a href="http://localhost/eLEGO/mon-compte/sav">SAV</a></li>
+		        			<li><a href="http://localhost/eLEGO/mon-compte/customer-logout/">Déconnexion</a></li>
 		        			
 		      			</ul>
 		    		</div><!-- /.navbar-collapse -->
 		  		</div><!-- /.container-fluid -->
 			</nav>
-			<h1>W :: <?= $this->e($title) ?></h1>
+			<div class="logo">
+				<h1><?= $this->e($title) ?></h1>
+			</div>
 		</header>
 
 		<section>

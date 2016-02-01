@@ -183,9 +183,8 @@ class WC_Frontend_Scripts {
 			self::enqueue_script( 'select2' );
 			self::enqueue_style( 'select2', $assets_path . 'css/select2.css' );
 
-			// Password strength meter.
-			// Load in checkout, account login and edit account page.
-			if ( ( 'no' === get_option( 'woocommerce_registration_generate_password' ) && ! is_user_logged_in() ) || is_edit_account_page() ) {
+			// Password strength meter js called for checkout page.
+			if ( 'no' === get_option( 'woocommerce_registration_generate_password' ) && ! is_user_logged_in() ) {
 				self::enqueue_script( 'wc-password-strength-meter' );
 			}
 		}
