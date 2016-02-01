@@ -1,0 +1,46 @@
+@font-face
+{
+	font-family:'Legothick';
+	src: url('<?= $this->assetUrl('Fonts/Legothick.ttf'); ?>');
+}
+
+body
+{
+	padding-top: 70px;
+	background-color: #000;
+	color:#FFF;
+}
+
+footer>p
+{
+	text-align: center;
+}
+
+.legofont
+{
+	font-family: 'Legothick';
+	text-transform: uppercase;
+}
+
+.logo
+{
+	width:110px;
+	height: 180px;
+	float:left;
+}
+
+.adm_title
+{
+	float:left;
+}
+
+.logo img
+{
+	width: 100px;
+	height:170px;
+}
+
+.clearfix
+{
+	clear: both;
+}
