@@ -51,6 +51,7 @@
 							<li><a href="http://localhost/eLEGO/mon-compte/">Connexion</a></li>
 							<li><a href="<?= $this->url('privatespace_privatespace'); ?>">Espace personnel</a></li>
 		        			<li><a href="<?= $this->url('default_help'); ?>">Aide</a></li>
+		        			<li><a href="<?= $this->url('admin_home'); ?>">Administration</a></li>
 		      			</ul>
 		    		</div><!-- /.navbar-collapse -->
 		  		</div><!-- /.container-fluid -->
