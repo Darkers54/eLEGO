@@ -42,12 +42,12 @@ class TbusersController extends \W\Controller\Controller
 				if(!empty($fname) ) 
 				{
 					$tbusersManager = new \Manager\TbusersManager();
-					$exists = $tbusersManager->insertContact($fname, $lname, $mail, $pwd);
+					$exists = $tbusersManager->insertContact($fname, $lname, $mail);
 					if($exists == true) 
 					{
 						$return = '<p>Votre inscription s\'est bien passé. Faut créer un lien de confirmation plus tard.</p>
 							<br><p>Ceci est un email automatique, merci de ne pas y répondre.</p>';
-							$this->inscriptionEmail($mail,$fname,$lname,$pwd,$return);
+							$this->inscriptionEmail($mail,$fname,$lname,$return);
 					}
 					//$connect ='<a href="http://localhost/eLEGO/mon-compte/"></a>';
 					$this->redirect('http://localhost/eLEGO/mon-compte/');//modifier pour page 
@@ -56,7 +56,7 @@ class TbusersController extends \W\Controller\Controller
 		}
 		
 
-		public function inscriptionEmail($address,$fname,$lname,$subject,$return)
+		public function inscriptionEmail($address,$fname,$lname,$return)
 		{
 			$mail= new \PHPMailer();
 
@@ -79,7 +79,7 @@ class TbusersController extends \W\Controller\Controller
 			//$mail->addAttachment('/tmp/image.jpg', 'new.jpg');    // Optional name
 			$mail->isHTML(true);                                  // Set email format to HTML
 
-			$mail->Subject = $subject ;
+			$mail->Subject = "Votre inscription a eLEGO" ;
 			$mail->Body    = $return ;
 			//$mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
 
