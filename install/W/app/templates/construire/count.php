@@ -1,1 +1,1 @@
-<?php foreach($nblines as $lines) : ?><?= $lines; ?><?php endforeach; ?>
+<?php foreach($nblines as $lines) : ?><?= $lines[0]; ?><?php endforeach; ?>

@@ -12,6 +12,7 @@
 
 		['POST', '/configuration', 'tbproduct#afficheConfiguration', 'configuration_configuration'],
 		['GET', '/configuration/rtstock', 'tbproduct#getStock', 'configuration_rtstock'],
+		['GET', '/configuration/save', 'tbproduct#saveComposition', 'configuration_save'],
 		['GET', '/configuration/pays', 'tbdeliverycountry#getAllCountries', 'configuration_pays'],
 		['GET', '/configuration/livraison', 'tbdeliveryassocweightcountrycosts#getCosts', 'configuration_livraison'],
 

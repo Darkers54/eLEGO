@@ -109,6 +109,94 @@
 			$stmt->execute();
 			return true;
 		}
+
+		public function updatetbProduct($ID, $post_author, $post_date, $post_date_gmt, $post_content, $post_title, $post_excerpt, $post_status, $comment_status, $ping_status, $post_password, $post_name, $to_ping, $pinged, $post_modified, $post_modified_gmt, $post_content_filtered, $post_parent, $guid, $menu_order, $post_type, $post_mime_type, $comment_count, $object_id, $term_taxonomy_id, $term_order, $term_id, $taxonomy, $description, $parent, $count, $prodNbrRef, $prodNameRef, $prodDesc, $prodcatID, $prodPriceUnit, $prodNbStock, $prodUrl)
+		{
+			$strConnect = 'mysql:host=localhost;dbname=lego_test;charset=utf8';
+			$pdo = new \PDO($strConnect, 'eadmlego16', '20CyLanMelLex');
+			$pdo->setAttribute(\PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION);
+			$sql = 'UPDATE tbproduct SET 
+				tbproduct.ID = :ID,
+				tbproduct.post_author = :post_author, 
+				tbproduct.post_date = :post_date, 
+				tbproduct.post_date_gmt = :post_date_gmt, 
+				tbproduct.post_content = :post_content, 
+				tbproduct.post_title = :post_title, 
+				tbproduct.post_excerpt = :post_excerpt, 
+				tbproduct.post_status = :post_status, 
+				tbproduct.comment_status = :comment_status, 
+				tbproduct.ping_status = :ping_status, 
+				tbproduct.post_password = :post_password, 
+				tbproduct.post_name = :post_name, 
+				tbproduct.to_ping = :to_ping, 
+				tbproduct.pinged = :pinged, 
+				tbproduct.post_modified = :post_modified, 
+				tbproduct.post_modified_gmt = :post_modified_gmt, 
+				tbproduct.post_content_filtered = :post_content_filtered, 
+				tbproduct.post_parent = :post_parent, 
+				tbproduct.guid = :guid, 
+				tbproduct.menu_order = :menu_order, 
+				tbproduct.post_type = :post_type, 
+				tbproduct.post_mime_type = :post_mime_type, 
+				tbproduct.comment_count = :comment_count, 
+				tbproduct.object_id = :object_id, 
+				tbproduct.term_taxonomy_id = :term_taxonomy_id, 
+				tbproduct.term_order = :term_order, 
+				tbproduct.term_id = :term_id, 
+				tbproduct.taxonomy = :taxonomy, 
+				tbproduct.description = :description, 
+				tbproduct.parent = :parent, 
+				tbproduct.count = :count, 
+				tbproduct.prodNbrRef = :prodnbrref, 
+				tbproduct.prodNameRef = :prodnameref, 
+				tbproduct.prodDesc = :proddesc, 
+				tbproduct.prodcat_ID = :prodcatID, 
+				tbproduct.prodPriceUnit = :prodpriceunit, 
+				tbproduct.prodNbStock = :prodnbstock, 
+				tbproduct.prodUrl =:produrl 
+				WHERE tbproduct.ID = :ID;';
+			$stmt = $pdo->prepare($sql);
+			$stmt->bindValue(':ID',$ID, \PDO::PARAM_INT); //BIGINT(20)
+			$stmt->bindValue(':post_author',$post_author, \PDO::PARAM_INT); //BIGINT(20)
+			$stmt->bindValue(':post_date',$post_date); //DATETIME
+			$stmt->bindValue(':post_date_gmt',$post_date_gmt); //DATETIME
+			$stmt->bindValue(':post_content',$post_content); //LONGTEXT
+			$stmt->bindValue(':post_title',$post_title); //TEXT
+			$stmt->bindValue(':post_excerpt',$post_excerpt); //TEXT
+			$stmt->bindValue(':post_status',$post_status); //VARCHAR(20)
+			$stmt->bindValue(':comment_status',$comment_status); //VARCHAR(20)
+			$stmt->bindValue(':ping_status',$ping_status); //VARCHAR(20)
+			$stmt->bindValue(':post_password',$post_password); //VARCHAR(20)
+			$stmt->bindValue(':post_name',$post_name); //VARCHAR(200)
+			$stmt->bindValue(':to_ping',$to_ping); //TEXT
+			$stmt->bindValue(':pinged',$pinged); //TEXT
+			$stmt->bindValue(':post_modified',$post_modified); //DATETIME
+			$stmt->bindValue(':post_modified_gmt',$post_modified_gmt); //DATETIME
+			$stmt->bindValue(':post_content_filtered',$post_content_filtered); //LONGTEXT
+			$stmt->bindValue(':post_parent',$post_parent, \PDO::PARAM_INT); //BIGINT(20)
+			$stmt->bindValue(':guid',$guid); //VARCHAR(255)
+			$stmt->bindValue(':menu_order',$menu_order, \PDO::PARAM_INT); //INT(11)
+			$stmt->bindValue(':post_type',$post_type); //VARCHAR(20)
+			$stmt->bindValue(':post_mime_type',$post_mime_type); //VARCHAR(100)
+			$stmt->bindValue(':comment_count',$comment_count, \PDO::PARAM_INT); //BIGINT(20)
+			$stmt->bindValue(':object_id',$object_id, \PDO::PARAM_INT); //BIGINT(20)
+			$stmt->bindValue(':term_taxonomy_id',$term_taxonomy_id, \PDO::PARAM_INT); //BIGINT(20)
+			$stmt->bindValue(':term_order',$term_order, \PDO::PARAM_INT); //INT(11)
+			$stmt->bindValue(':term_id',$term_id, \PDO::PARAM_INT); //BIGINT(20)
+			$stmt->bindValue(':taxonomy',$taxonomy); //VARCHAR(32)
+			$stmt->bindValue(':description',$description); //LONGTEXT
+			$stmt->bindValue(':parent',$parent, \PDO::PARAM_INT); //BIGINT(20)
+			$stmt->bindValue(':count',$count, \PDO::PARAM_INT); //BIGINT(20)
+			$stmt->bindValue(':prodnbrref',$prodNbrRef, \PDO::PARAM_INT); //INT(11)
+			$stmt->bindValue(':prodnameref',$prodNameRef); //VARCHAR(255)
+			$stmt->bindValue(':proddesc',$prodDesc); //VARCHAR(255)
+			$stmt->bindValue(':prodcatID',$prodcatID, \PDO::PARAM_INT); //INT(11)
+			$stmt->bindValue(':prodpriceunit',$prodPriceUnit); //FLOAT
+			$stmt->bindValue(':prodnbstock',$prodNbStock, \PDO::PARAM_INT); //INT(11)
+			$stmt->bindValue(':produrl',$prodUrl); //VARCHAR(255)
+			$stmt->execute();
+			return true;			
+		}
 	}
 
 ?>

@@ -65,6 +65,99 @@ $(function(){
 		addByOneClickOnThePlusButton(location6);
 	});
 
+	$('#btnSave').on('click', function(){
+		var idUser = 1;
+		var idz1 = $('.zone'+location1+'>img').attr('id');
+		var idz2 = $('.zone'+location2+'>img').attr('id');
+		var idz3 = $('.zone'+location3+'>img').attr('id');
+		var idz4 = $('.zone'+location4+'>img').attr('id');
+		var idz5 = $('.zone'+location5+'>img').attr('id');
+		var idz6 = $('.zone'+location6+'>img').attr('id');
+
+		//console.log(idz1); //DEBUG
+		//console.log(idz2); //DEBUG
+		//console.log(idz3); //DEBUG
+		//console.log(idz4); //DEBUG
+		//console.log(idz5); //DEBUG
+		//console.log(idz6); //DEBUG
+
+		var assemblage = 
+		{
+			AssOwner : idUser,
+			AssAccHead : idz1,
+			AssHead : idz2,
+			AssAccChest : idz3,
+			AssChest : idz4,
+			AssAccLegs : idz5,
+			AssLegs : idz6,
+		}; 
+
+		var assemblage_options = 
+		{
+			url: '/configuration/save',
+			method: 'GET',
+			data: assemblage,
+			success: function(data)
+			{
+				//console.log(data); //DEBUG
+				alert('votre produit a été enregisté avec succès !');
+				$('#btnSave').css({display : 'none'});
+				$('#btnEdit').css({display : 'none'});
+			}
+		}
+		$.ajax(assemblage_options);
+	});
+
+	$('#btnBuy').on('click', function()
+	{
+		alert('Hé hé hé ! Pas encore mais ça ne saurait tarder ;p !!!');
+	});
+
+	$('#btnEdit').on('click', function()
+	{
+		var idUser = 1;
+		var idz1 = $('.zone'+location1+'>img').attr('id');
+		var idz2 = $('.zone'+location2+'>img').attr('id');
+		var idz3 = $('.zone'+location3+'>img').attr('id');
+		var idz4 = $('.zone'+location4+'>img').attr('id');
+		var idz5 = $('.zone'+location5+'>img').attr('id');
+		var idz6 = $('.zone'+location6+'>img').attr('id');
+
+		//console.log(idz1); //DEBUG
+		//console.log(idz2); //DEBUG
+		//console.log(idz3); //DEBUG
+		//console.log(idz4); //DEBUG
+		//console.log(idz5); //DEBUG
+		//console.log(idz6); //DEBUG
+
+		alert('Fonctionnalité en cours de finalisation');
+
+		/*
+		var assemblage = 
+		{
+			AssOwner : idUser,
+			AssAccHead : idz1,
+			AssHead : idz2,
+			AssAccChest : idz3,
+			AssChest : idz4,
+			AssAccLegs : idz5,
+			AssLegs : idz6,
+		}; 
+
+		var assemblage_options = 
+		{
+			url: '/configuration',
+			method: 'GET',
+			data: assemblage,
+			success: function(data)
+			{
+				//console.log(data); //DEBUG
+			}
+		}
+		$.ajax(assemblage_options);
+		*/
+	})
+
 	function removeByOneClickOnTheMinusButton(location)
 	{
 		var currentQty = parseInt($('#qty'+location+'').text());
@@ -252,7 +345,7 @@ $(function(){
 
 		if(calculatedweight >= 3000)
 		{
-			alert('la masse des pièces dépasse la capacité postaled \'envoi !');
+			alert('la masse des pièces dépasse la capacité postale d \'envoi !');
 			return 0;
 		}
 		else if(calculatedweight >= 500)

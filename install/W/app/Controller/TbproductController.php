@@ -89,6 +89,7 @@
 			$idcat = $request['idcat'];
 			$tbproductManager = new \Manager\tbproductManager();
 			$nbLines = $tbproductManager->CountLinesByCat($idcat);
+			//debug($nbLines); //DEBUG
 			$this->show('construire/count', ['nblines' => $nbLines]);
 		}
 
@@ -117,5 +118,20 @@
 			$tbproductManager = new \Manager\TbproductManager();
 			$inStock = $tbproductManager->getStockForThisPart($idPartToCheck);
 			$this->show('configuration/rtstock', ['inStock' => $inStock]);
+		}
+
+		public function saveComposition()
+		{
+			$request = $_REQUEST;
+			$idUser = $request['AssOwner'];
+			$z1 = $request['AssAccHead'];
+			$z2 = $request['AssHead'];
+			$z3 = $request['AssAccChest'];
+			$z4 = $request['AssChest'];
+			$z5 = $request['AssAccLegs'];
+			$z6 = $request['AssLegs'];
+			$tbfigurecreatedManager = new \Manager\tbfigurecreatedManager();
+			$compoSaved = $tbfigurecreatedManager->saveCompositionIntotbFigureCreated($idUser, $z1, $z2, $z3, $z4, $z5, $z6);
+			$this->show('configuration/save', ['composaved' => $compoSaved]);
 		}
 	}

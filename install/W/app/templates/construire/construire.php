@@ -61,7 +61,7 @@
 		<!-- Zone 3 : Visuel des détails de la pièce, ajout en sélection, retrait de la sélection -->
 		<?php 
 				foreach ($z2acchead as $currentAccHead) :
-					$id = $currentAccHead['ID_prod'];
+					$id .= $currentAccHead['ID_prod'];
 			?>
 		<div id="z3acchead" class="liste acchead zone3 col-lg-4 col-lg-push-0 col-md-6 col-md-push-6 col-sm-6 col-sm-push-6 col-xs-12">
 			<ul>

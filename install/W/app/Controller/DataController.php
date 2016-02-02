@@ -11,8 +11,9 @@
 			$request = $_REQUEST;
 			if(isset($request['btnImport']))
 			{
+				$loop = 0;
 				$linesAddedCount = 0;
-				$linesIgnoredCount = 0;
+				$linesUpdatedCount = 0;
 				$prodcatID = 0;
 				$pdctID = 0;
 				$pcto = 0;
@@ -60,7 +61,8 @@
 				$prodUrl = $produit['post_name'] . '.jpg';
 				$check = $DataManager->CheckIfExist($ID);
 				//debug($check); //DEBUG
-				if(empty($check['ID']))
+
+				if(empty($check[0]['ID']))
 				{
 					//echo $description.'<br>'; //DEBUG
 					
@@ -100,7 +102,6 @@
 						$pctintermediate = $pcto['prodcatorder'];
 						$prodcatorder = $pctintermediate + 1;
 					}
-					$linesAddedCount++;
 					$ppu = $DataManager->getInfosFromPostMeta($produit['ID'], '_regular_price');
 					$prodPriceUnit = $ppu['meta_value'];
 					$pns = $DataManager->getInfosFromPostMeta($produit['ID'], '_stock');
@@ -108,22 +109,56 @@
 					$addLine = $DataManager->insertIntotbProduct($ID, $post_author, $post_date, $post_date_gmt, $post_content, $post_title, $post_excerpt, $post_status, $comment_status, $ping_status, $post_password, $post_name, $to_ping, $pinged, $post_modified, $post_modified_gmt, $post_content_filtered, $post_parent, $guid, $menu_order, $post_type, $post_mime_type, $comment_count, $object_id, $term_taxonomy_id, $term_order, $term_id, $taxonomy, $description, $parent, $count, $prodNbrRef, $prodNameRef, $prodDesc, $prodcatID, $prodcatorder, $prodPriceUnit, $prodNbStock, $prodUrl);
 					if($addLine == true)
 					{
-						echo 'Une ligne a été ajoutée en base de données dans la table tbproduct<br>';
+						echo 'le produit '.$ID.' a été ajouté en base de données dans la table tbproduct<br>';
+						$linesAddedCount++;
 					}
-
-
-
-
-					
 				}
 				else
 				{
-					$linesIgnoredCount++;
-				}			
+					switch ($description) 
+					{
+						case 'Accessoires Tête':
+							$pdctID = $DataManager->getIDpdct('accessories_head');
+							break;
+						case 'Tête':
+							$pdctID = $DataManager->getIDpdct('heads');
+							break;
+						case 'Accessoires Buste':
+							$pdctID = $DataManager->getIDpdct('accessories_chest');
+							break;	
+						case 'Buste':
+							$pdctID = $DataManager->getIDpdct('chests');
+							break;
+						case 'Accessoires Jambes':
+							$pdctID = $DataManager->getIDpdct('accessories_legs');
+							break;
+						case 'Jambes':
+							$pdctID = $DataManager->getIDpdct('legs');
+							break;
+						default:
+							$pdctID=array('ID_pdct' => 7);
+							break;
+					}
+					$prodcatID = $pdctID['ID_pdct'];
+
+					$ppu = $DataManager->getInfosFromPostMeta($produit['ID'], '_regular_price');
+					$prodPriceUnit = $ppu['meta_value'];
+					$pns = $DataManager->getInfosFromPostMeta($produit['ID'], '_stock');
+					$prodNbStock = $pns['meta_value'];
+					$updateLine = $DataManager->updatetbProduct($ID, $post_author, $post_date, $post_date_gmt, $post_content, $post_title, $post_excerpt, $post_status, $comment_status, $ping_status, $post_password, $post_name, $to_ping, $pinged, $post_modified, $post_modified_gmt, $post_content_filtered, $post_parent, $guid, $menu_order, $post_type, $post_mime_type, $comment_count, $object_id, $term_taxonomy_id, $term_order, $term_id, $taxonomy, $description, $parent, $count, $prodNbrRef, $prodNameRef, $prodDesc, $prodcatID, $prodPriceUnit, $prodNbStock, $prodUrl);
+					if($updateLine == true)
+					{
+						echo 'le produit '.$ID.' a été mis à jour en base de données dans la table tbproduct<br>';
+						$linesUpdatedCount++;
+					}
+					$loop++;
+					
+				}	
+
 				endforeach;
 				echo $linesAddedCount . ' lignes ont été ajoutées en base de données.<br>';
-				echo $linesIgnoredCount . ' lignes ont été ignorées.<br>';
-				echo ($linesIgnoredCount+$linesAddedCount) . ' lignes ont été traitées<br>';
+				echo $linesUpdatedCount . ' lignes ont été mises à jour.<br>';
+				echo ($linesUpdatedCount+$linesAddedCount) . ' lignes ont été traitées<br>';
 			}
 		}
 	}

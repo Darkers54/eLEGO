@@ -191,9 +191,9 @@
 	<div class="cmdbuttons col-lg-12 col-md-12 col-sm-12 col-xs-12">
 		<a href="<?= $this->url('construire_construire'); ?>">
 		<button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="top" title="Créer un nouvel assemblage">Nouveau</button></a>
-		<button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="top" title="Modifier l'assemblage">Modifier</button>
-		<button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="top" title="Acheter votre assemblage">Acheter</button>
-		<button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="left" title="Enregistrer cet assemblage">Enregistrer</button>
+		<button id="btnEdit" type="button" class="btn btn-default" data-toggle="tooltip" data-placement="top" title="Modifier l'assemblage">Modifier</button>
+		<button id="btnBuy" type="button" class="btn btn-default" data-toggle="tooltip" data-placement="top" title="Acheter votre assemblage">Acheter</button>
+		<button id="btnSave" type="button" class="btn btn-default" data-toggle="tooltip" data-placement="left" title="Enregistrer cet assemblage">Enregistrer</button>
 		<div class="clearfix"></div>
 	</div>	
 </div>

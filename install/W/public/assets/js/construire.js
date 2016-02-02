@@ -188,6 +188,7 @@ $(function(){
 
 	function clickOnNextButton(location, category, translation)
 	{
+		//console.log(category); //DEBUG
 		var nblinestotal=0;
 		var nb_lines =
 		{
